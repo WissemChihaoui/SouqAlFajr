@@ -1,0 +1,226 @@
+/* ---------Navbar */
+.navbar{
+    padding: 17px 16px;
+    border-bottom: 0.5px solid #E0E0E0;
+}
+.navbar .navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.navbar .navbarMenu{
+    display: none;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    padding: 12px;
+    height: 100%;
+    z-index: 10;
+}
+.navbar .navbarMenu .navbarMenuExit{
+    color: var(--secondary-text);
+    font-size: 24px;
+    float: right;
+}
+.navbar .navbarMenu .navbarItems{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 38px;
+}
+.navbar .navbarMenu .navbarItems .navbarItem a{
+    color: var(--secondary-text);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.navbar .navbarMenu .navbarItems .navbarItem.button{
+    background: var(--button-bg);
+    padding: 10px 24px;
+    border-radius: 6px;
+}
+.navbar .navbarMenu .navbarItems .navbarItem.button a{
+    color: var(--white-text);
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.navbar .navbarMenu.active{
+    display: block;
+}
+.navbar .navbarContainer .menuIcon{
+    display: none;
+}
+.navbar .navbarContainer .navbarItems{
+    display: flex;
+    gap:24px;
+    align-items: center;
+}
+.navbar .navbarContainer .navbarLogo{
+    font-weight: 700;
+    font-size: 24px;
+}
+.navbar .navbarContainer .navbarItems .navbarItem a{
+    color: var(--secondary-text);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.navbar .navbarContainer .navbarItems .navbarItem.button{
+    background: var(--button-bg);
+    padding: 10px 24px;
+    border-radius: 6px;
+}
+.navbar .navbarContainer .navbarItems .navbarItem.button a{
+    color: var(--white-text);
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.navbar .navbarContainer .navbarItems .navbarItem a svg{
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    .navbar .navbarContainer .navbarItems{
+        display:none;
+    }
+    .navbar .navbarContainer .menuIcon{
+        display: block;
+        font-size: 24px;
+        color: var(--secondary-text);
+    }
+    .navbar .navbarContainer .navbarLogo{
+        font-weight: 700;
+        font-size: 18px;
+    }
+}
+
+/* -------Register */
+.register{
+    padding: 75px 250px;
+}
+.register .registerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 16px;
+}
+.register .registerContainer h2{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 45px;
+}
+.register .registerContainer p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--secondary-text);
+}
+.register .registerContainer form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.register .registerContainer form .registerInputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    gap: 24px;
+}
+.register .registerContainer form .registerInputs .inputField{
+    border: var(--secondary-text) 1px solid;
+    border-radius: 18px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.register .registerContainer form .registerInputs .inputField svg{
+    font-size: 24px;
+    color: var(--secondary-text);
+}
+.register .registerContainer form .registerInputs .inputField svg:nth-child(3){
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+.register .registerContainer form .registerInputs .inputField input{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 85%;
+}
+.register .registerContainer form .submit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.register .registerContainer form .submit .submitCheck{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+.register .registerContainer form .submit .submitCheck input{
+    outline: 2px solid black;
+    border-radius: 4px;
+}
+.register .registerContainer form .submit .submitCheck span{
+    font-size: 14px;
+    font-weight: 700;
+}
+.register .registerContainer form .submit .submitCheck span a{
+    text-decoration: none;
+}
+.register .registerContainer form .submit .submitButton button{
+    color: var(--white-text);
+    background: var(--button-bg);
+    padding: 16px 145px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+@media(max-width: 1090px){
+    .register{
+        padding: 55px 150px;
+    }
+}
+@media(max-width: 890px){
+    .register{
+        padding: 48px 88px;
+    }
+}
+@media(max-width: 890px){
+
+    .register {
+        padding: 0 10px;
+    }
+    .register .registerContainer form .registerInputs{
+        grid-template-columns: 1fr;
+    }
+    .register .registerContainer{
+        padding: 10px 16px;
+        align-items: center;
+    }
+    .register .registerContainer form .submit .submitButton,
+    .register .registerContainer form .submit .submitButton{
+        width: 100%;
+    }
+}
