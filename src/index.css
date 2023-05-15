@@ -11,9 +11,12 @@
   --white-text: white;
   --important-text : linear-gradient(180deg, #FD572A 0%, #F0951D 100%);
 }
+*{
+  font-family: var(--font-base);
+}
 body {
   margin: 0;
-  font-family: var(--font-base);
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;

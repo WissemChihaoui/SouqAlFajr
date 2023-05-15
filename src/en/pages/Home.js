@@ -8,6 +8,7 @@ import fruit from "../../assets/img/fruit.png"
 import fish from "../../assets/img/fish.png"
 import vegetable from "../../assets/img/vegetable.png"
 import dates from "../../assets/img/dates.png"
+import ShopCard from '../comp/ShopCard';
 const Home = () => {
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(100);
@@ -132,7 +133,7 @@ const Home = () => {
                 </div>
                 <div className='homeShow'>
                     <div className='categories'>
-                        <div className='categorie  active'>
+                        <div className='categorie'>
                             <div className='categorieIcon' style={{'backgroundColor':'#f0f9f0'}}>
                                 <img src={vegetable} />
                             </div>
@@ -158,8 +159,19 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='homeContent'>
-                        homeContent
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
                     </div>  
+                        
                 </div>
             </div>
         </div>
