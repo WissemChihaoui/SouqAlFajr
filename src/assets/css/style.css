@@ -224,3 +224,153 @@
         width: 100%;
     }
 }
+
+/* -------footer */
+
+.footer{
+    background-color: var(--primary-color);
+    width: -webkit-fill-available;
+    padding: 30px 155px;
+}
+.footer .footerContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.footer .footerContainer .about{
+    text-align: left;
+    color: var(--white-text);
+    width: 50%;
+}
+.footer .footerContainer .about .footerLogo{
+    font-weight: 700;
+    font-size: 24px;
+}
+.footer .footerContainer .about p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.footer .footerContainer .footerLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--white-text);
+}
+.footer .footerContainer .footerLinks .socialMedia{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    align-items: center;
+}
+.footer .footerContainer .footerLinks .socialMedia a{
+    color: var(--white-text);
+}
+.footer .footerContainer .footerLinks .socialMedia a svg{
+    font-size: 26px;
+}
+.footer .footerContainer .footerLinks .socialMedia a img{
+    height: 26px;
+}
+.footer .footerContainer .footerLinks .links{
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+.footer .footerContainer .footerLinks .links a{
+    text-decoration: none;
+    color: var(--white-text);
+    font-size: 18px;
+    font-weight: 400;
+}
+.footer .footerContainer .footerLinks .rights{
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+}
+.footer .footerContainer .footerLinks .rights a{
+    color: var(--white-text);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+@media(max-width: 1090px){
+    .footer{
+        padding: 30px 45px;
+    }
+}
+@media(max-width: 890px){
+    .footer .footerContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .footerContainer .about {
+        text-align: center;
+        width: 90%;
+    }
+    .footer .footerContainer .footerLinks{
+        align-items: center;
+    }
+}
+
+/* ---------Reset Password  */
+.passwordReset{
+    padding: 75px 250px;
+}
+.passwordReset .passwordResetContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+}
+.passwordReset .passwordResetContainer h2{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 45px;
+}
+.passwordReset .passwordResetContainer form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.passwordReset .passwordResetContainer form .inputField{
+    border: var(--secondary-text) 1px solid;
+    border-radius: 18px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.passwordReset .passwordResetContainer form .inputField svg{
+    font-size: 24px;
+    color: var(--secondary-text);
+}
+.passwordReset .passwordResetContainer form .inputField svg:nth-child(3){
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+.passwordReset .passwordResetContainer form .inputField input{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 85%;
+}
+.passwordReset .submitButton button{
+    color: var(--white-text);
+    background: var(--button-bg);
+    padding: 16px 145px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+@media(max-width: 890px){
+    .passwordReset{
+        padding:0;
+    }
+}

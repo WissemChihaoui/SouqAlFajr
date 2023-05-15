@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Navbar from '../comp/Navbar'
+import Footer from '../comp/Footer'
 import { Icon } from '@iconify/react';
 const Register = () => {
     const [pswHide, setPswHide] = useState(true)
@@ -58,6 +59,7 @@ const Register = () => {
                 </form>
             </div>
         </div>
+        <Footer />
     </div>
   )
 }
