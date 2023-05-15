@@ -33,3 +33,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+.rc-slider-handle{
+  background-color: var(--primary-color)!important;
+  border: solid 2px var(--primary-color);
+}

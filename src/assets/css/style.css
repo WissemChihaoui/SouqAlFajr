@@ -374,3 +374,163 @@
         padding:0;
     }
 }
+
+/* -------Home */
+
+/* --searchBar */
+.searchBar{
+    background:var(--button-bg);
+    padding: 24px;
+}
+.searchBar .searchBarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.searchBar .searchBarContainer .inputField{
+    background: var(--bg-color);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 18px;
+}
+.searchBar .searchBarContainer .inputField input{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 500px;
+}
+.searchBar .searchBarContainer .inputField svg{
+    font-size: 32px;
+    color: var(--primary-color);
+}
+/* --HomeContent */
+.home{
+    margin: 20px 24px;
+}
+.home .homeContainer{
+    display: flex;
+    gap: 11px;
+}
+.home .homeContainer .filterBar{
+    background: #FFF1DE;
+    border-radius: 8px;
+    flex: 0 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 415px;
+}
+.home .homeContainer .filterBar hr{
+    border:0.5px solid #FFD08F;
+    width:100%
+}
+.home .homeContainer .filterBar .filterOptionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 10px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings a{
+    color: var(--primary-color);
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings svg{
+    font-size: 18px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    outline:none;
+    padding: 0;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
+    font-size: 20px;
+    color: var(--secondary-text);
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterTitle h3{
+    margin: 0;
+    font-size: 18px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs .rangeValues{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs .rangeValues span{
+    font-weight: bold;
+    font-size: 14px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
+    background: var(--bg-color);
+    color: var(--primary-text);
+    border: 1px solid var(--secondary-text);
+    padding: 4px 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
+    background: var(--primary-color);
+    color: var(--white-text);
+    border: none;
+}
+.home .homeContainer .homeShow{
+    flex: 1 0 auto;
+}
+.home .homeContainer .homeShow .categories{
+    display: flex;
+    gap: 24px;
+}
+.home .homeContainer .homeShow .categories .categorie{
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-color);
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    width: -webkit-fill-available;
+}
+.home .homeContainer .homeShow .categories .categorie span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.home .homeContainer .homeShow .categories .categorie.active{
+    background: var(--primary-color);
+    border: none;
+}
+.home .homeContainer .homeShow .categories .categorie.active span{
+    color: var(--white-text);
+}
+.home .homeContainer .homeShow .categories .categorie .categorieIcon{
+    padding: 10px;
+    border-radius: 8px;
+}
+.home .homeContainer .homeShow .categories .categorie.active .categorieIcon{
+    background: var(--bg-color)!important;
+}
