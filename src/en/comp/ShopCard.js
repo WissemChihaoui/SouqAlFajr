@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import onion from '../../assets/img/onion.jpg'
 const ShopCard = () => {
+    const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className='shopCard'>
+    
+    <div className='shopCard' onClick={()=> setIsOpen(true)}>
         <div className='imageContent'>
             <img src={onion} />
             <div className='productBadge availableProduct'>

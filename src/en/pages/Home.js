@@ -12,17 +12,18 @@ import ShopCard from '../comp/ShopCard';
 import searchSplash from '../../assets/img/searchSplash.png'
 import Cart from '../../assets/img/cart.png'
 import Shopping from '../../assets/img/shopping.png'
+import ProductCard from '../popups/ProductCard';
 const Home = () => {
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(100);
+    const [isOpen, setIsOpen] = useState(true);
     const handleRangeChange = (values) => {
-        // values[0] represents the minimum value
-        // values[1] represents the maximum value
+    
         setRangeMin(values[0]);
         setRangeMax(values[1]);
       };
   return (
-    <div>
+    <div style={{"position":"relative"}}>
         <Navbar />
         <div className='searchBar'>
             <div className='searchBarContainer'>
@@ -163,16 +164,7 @@ const Home = () => {
                     </div>
                     <div className='homeContent'>
                         <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
-                        <ShopCard />
+                        
                     </div>  
                         
                 </div>
@@ -212,6 +204,7 @@ const Home = () => {
                 <span>Contact</span>
             </div>
         </a>
+        {isOpen && <ProductCard setIsOpen={setIsOpen} />}
     </div>
   )
 }
