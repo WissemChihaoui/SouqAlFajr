@@ -660,3 +660,55 @@
     font-weight: 400;
     font-size: 12px;
 }
+
+/* -------Contact Support */
+
+.contactSupport{
+    position: fixed;
+    z-index: 100;
+    background: var(--primary-color);
+    bottom: 36px;
+    right: 24px;
+    border-radius: 50%;
+    width: 127px;
+    height: 127px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.contactSupport .content{
+    color: var(--white-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactSupport .content svg{
+    font-size: 56px;
+}
+.contactSupport .content span{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*---- About Div Home */
+.aboutHome{
+    margin: 155px 24px;
+}
+.aboutHome .aboutHomeContainer{
+    display: flex;
+}
+.aboutHome .aboutHomeContainer .aboutInfo{
+    padding: 24px;
+    background-color: #F2F2F2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.aboutHome .aboutHomeContainer .aboutInfo img{
+    position: absolute;
+   top: -67px;
+}
+.aboutHome .aboutHomeContainer .aboutInfo .textContent{
+    margin-top: 60px;
+}
