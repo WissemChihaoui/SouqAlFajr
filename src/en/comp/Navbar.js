@@ -1,10 +1,15 @@
 import React,{ useState } from 'react';
 import { Icon } from '@iconify/react';
+import Login from '../popups/Login';
 
 
 
 const Navbar = () => {
     const [menuActive, setmenuActive] = useState(false);
+    const [loginPopup, setLoginPopup] = useState(false)
+    const handleLoginPopup =()=>{
+        setLoginPopup(!loginPopup);
+    }
   return (
     <div className='navbar'>
         <div className='navbarContainer' >
@@ -27,12 +32,12 @@ const Navbar = () => {
                         <span>Sign up</span>
                     </a>
                 </div>
-                <div className='navbarItem button'>
+                <button className='navbarItem button' onClick={()=>setLoginPopup(!loginPopup)}>
                     <a href='#'>
                         <Icon icon="mdi:sign-in" />
                         <span>Sign in</span>
                     </a>
-                </div>
+                </button>
                 <div className='navbarItem'>
                     <a href='#'>
                         <span>AR</span>
@@ -64,12 +69,12 @@ const Navbar = () => {
                         <span>Sign up</span>
                     </a>
                 </div>
-                <div className='navbarItem button'>
-                    <a href='#'>
+                <button className='navbarItem button' >
+                    <a href='#' >
                         <Icon icon="mdi:sign-in" />
                         <span>Sign in</span>
                     </a>
-                </div>
+                </button>
                 <div className='navbarItem'>
                     <a href='#'>
                         <span>AR</span>
@@ -78,6 +83,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
+        {loginPopup && <Login setLoginPopup={setLoginPopup}/>}
     </div>
   )
 }

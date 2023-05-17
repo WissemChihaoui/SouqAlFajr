@@ -1071,3 +1071,150 @@
     color: #FD2A2A;
     font-weight: 600;
 }
+
+/* ---Login */
+
+.modalLogin{
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.modalLogin svg{
+    font-size: 22px;
+    color: var(--secondary-text);
+}
+.modalLogin form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.modalLogin form .logo{
+    font-weight: 700;
+    font-size: 24px;
+}
+.modalLogin form h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 44px;
+}
+.modalLogin form p{
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--secondary-text);
+}
+.modalLogin form .inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.modalLogin form .inputs .phoneNumWrapper.input{
+    border: 1px solid var(--secondary-text);
+    border-radius: 12px;
+    padding: 6px;
+}
+.modalLogin form .inputs .phoneNumWrapper{
+    display: flex;
+    gap: 16px;
+}
+.modalLogin form .inputs .phoneNumWrapper input{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+}
+.modalLogin form .inputs .phoneNumWrapper .selectWrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.modalLogin form .inputs .phoneNumWrapper .selectWrapper svg{
+    font-size: 24px;
+    position: absolute;
+}
+.modalLogin form .inputs .phoneNumWrapper .selectWrapper svg:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+.modalLogin form .inputs .phoneNumWrapper .selectWrapper select{
+    border: none;
+    outline: none;
+    background-color: transparent;
+  padding: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  z-index: 10;
+  padding-left: 24px;
+}
+.modalLogin form .inputs .input2{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.modalLogin form .inputs .input2 .inputField{
+    border: var(--secondary-text) 1px solid;
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.modalLogin form .inputs .input2 .inputField input{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 85%;
+    height: 35px;
+}
+.modalLogin form .inputs .input2 .inputField svg{
+    font-size: 24px;
+    color: var(--secondary-text);
+}
+.modalLogin form .inputs .input2 .inputField svg:nth-child(3){
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+.modalLogin form .inputs .input2 a{
+    color: #39C5A3;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: left;
+}
+.modalLogin form button.submit{
+    background: var(--button-bg);
+    padding: 10px 24px;
+    border-radius: 6px;
+    color: var(--white-text);
+    font-size: 16px;
+    font-weight: 600;
+}
+.modalLogin form .signup{
+    font-size: 16px;
+    font-weight: 700;
+}
+.modalLogin form .signup a{
+    color: #39C5A3;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    
+}
