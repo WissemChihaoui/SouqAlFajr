@@ -1,10 +1,13 @@
 import React,{useState} from 'react'
 import onion from '../../assets/img/onion.jpg'
-const ShopCard = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const ShopCard = ({openModal}) => {
+    const handleClick = () => {
+        // Invoke the openModal function passed from Component B
+        openModal(true);
+      };
   return (
     
-    <div className='shopCard' onClick={()=> setIsOpen(true)}>
+    <div className='shopCard' >
         <div className='imageContent'>
             <img src={onion} />
             <div className='productBadge availableProduct'>
@@ -28,7 +31,7 @@ const ShopCard = () => {
                 </div>
             </div>
             <div className='shopBtn'>
-                <button >
+                <button onClick={handleClick}>
                     <label>Auction Price</label>
                     <span>2.99 SAR<sup>/Kg</sup></span>
                 </button>

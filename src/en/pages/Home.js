@@ -16,16 +16,23 @@ import ProductCard from '../popups/ProductCard';
 const Home = () => {
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(100);
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    
     const handleRangeChange = (values) => {
     
         setRangeMin(values[0]);
         setRangeMax(values[1]);
-      };
+    };
+    const openModal = (newState) => {
+        setIsOpen(newState);
+    };
   return (
     <div style={{"position":"relative"}}>
         <Navbar />
         <div className='searchBar'>
+            <div className='filterDisplayBtn'>
+                <Icon icon="system-uicons:filtering" />
+            </div>
             <div className='searchBarContainer'>
                 <div className='inputField'>
                     <input placeholder='Search here ...' type={'text'} />
@@ -163,6 +170,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='homeContent'>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
+                        <ShopCard />
                         <ShopCard />
                         
                     </div>  

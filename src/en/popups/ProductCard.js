@@ -3,6 +3,8 @@ import { Icon } from '@iconify/react';
 import onion from '../../assets/img/onion.jpg'
 const ProductCard = ({setIsOpen}) => {
   const [qte, setQte] = useState(0)
+  const [available, setAvailable] = useState(false)
+  const [openPrice, setOpenPrice] = useState(false)
   const handleQte=(x)=>{
     let sum = x+qte;
     if(sum >= 0){
@@ -13,11 +15,14 @@ const ProductCard = ({setIsOpen}) => {
     <>
       <div className='darkBG' onClick={() => setIsOpen(false)} />
       <div className='modal centered'>
-        <Icon icon="material-symbols:close-rounded" />
+        <Icon icon="material-symbols:close-rounded" onClick={() => setIsOpen(false)}/>
         <div className='modalDetails'>
           <div className='modalPicture'>
             <div className='pictures'>
               <img src={onion} />
+              <div className='productBadge soldOutProduct'>
+                Sold Out Today!
+            </div>
             </div>
             <div className='navgation'>
               <div className='navdot' />
@@ -42,7 +47,9 @@ const ProductCard = ({setIsOpen}) => {
               <label>Al Dammam</label>
             </div>
             <div className='priceSettings'>
-              <div className='price'>
+              {available? (
+                <>
+                <div className='price'>
                 <span>Price</span>
                 <label className='importantText'>2.99 R.S</label>
               </div>
@@ -55,22 +62,49 @@ const ProductCard = ({setIsOpen}) => {
                   <Icon icon="ic:sharp-minus" />
                 </div>
               </div>
+              </>
+              ):
+              (
+                <div className='error'>Unfortunately product sold out for Today !</div>
+              )}
+              
             </div>
             <div className='pricing'>
               <div className='priceDetail'>
-                <label>
+                <div className='priceDetailbtn'>
+                <label onClick={()=> setOpenPrice(!openPrice)}>
                   Price Details
-                  <Icon icon="material-symbols:arrow-drop-down-rounded" />
+                  <Icon icon={openPrice? "material-symbols:arrow-drop-up-rounded":"material-symbols:arrow-drop-down-rounded"} />
                 </label>
                 <span>123456</span>
+                </div>
+                <table className={openPrice? 'priceDetailMenu active' :'priceDetailMenu'}>
+                  <tr className='col'>
+                    <td>Aucation Price</td>
+                    <td></td>
+                    <td>2.99 R.S</td>
+                  </tr>
+                  <tr className='col'>
+                    <td>Platform</td>
+                    <td>20%</td>
+                    <td>2.99 R.S</td>
+                  </tr>
+                  <tr className='col'>
+                    <td>Tax</td>
+                    <td>15%</td>
+                    <td>2.99 R.S</td>
+                  </tr>
+                </table>
+                
+                
               </div>
-              <div className='totalPrice'>
+              <div className={available?'totalPrice':'disable'}>
                 <label>Total Price</label>
                 <span className='importantText'>
                   0 R.S
                 </span>
               </div>
-              <div className='addToCartBtn'>
+              <div className={available?'addToCartBtn':'disable'}>
                 <button>Add to Cart</button>
               </div>
             </div>

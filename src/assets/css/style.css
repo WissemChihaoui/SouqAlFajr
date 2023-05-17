@@ -382,6 +382,17 @@
     background:var(--button-bg);
     padding: 24px;
 }
+.searchBar .filterDisplayBtn{
+    color: var(--white-text);
+    background: var(--primary-color);
+    font-size: 26px;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    display: none;
+}
 .searchBar .searchBarContainer{
     width: 100%;
     display: flex;
@@ -502,7 +513,7 @@
     border: none;
 }
 .home .homeContainer .homeShow{
-    max-width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -573,7 +584,7 @@
     object-fit: cover;
     border-radius: 12px;
 }
-.shopCard .imageContent .productBadge{
+.productBadge{
     position: absolute;
     bottom: 8px;
     left: 9px;
@@ -583,10 +594,10 @@
     padding: 2px 6px;
     border-radius: 179px;
 }
-.shopCard .imageContent .productBadge.availableProduct{
+.productBadge.availableProduct{
     background: #39C5A3;
 }
-.shopCard .imageContent .productBadge.soldOutProduct{
+.productBadge.soldOutProduct{
     background: #FD2A2A;
 }
 .shopCard .details{
@@ -743,6 +754,7 @@
   }
   .modal svg{
     font-size: 18px;
+    cursor: pointer;
   }
   .modal .modalDetails{
     display: flex;
@@ -757,6 +769,7 @@
   .modal .modalDetails .modalPicture .pictures{
     width: 100%;
     height: 400px;
+    position: relative;
   }
   .modal .modalDetails .modalPicture .pictures img{
     width: 100%;
@@ -767,7 +780,7 @@
   .modal .modalDetails .modalText{
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 16px;
     flex-grow: 1;
   }
   .modal .modalDetails .modalText .title{
@@ -797,6 +810,7 @@
   .modal .modalDetails .modalText .priceSettings{
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .modal .modalDetails .modalText .priceSettings .price{
     display: flex;
@@ -841,23 +855,46 @@
     gap: 22px;
     width: 100%;
   }
-  .modal .modalDetails .modalText .pricing .priceDetail{
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn{
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
   }
-  .modal .modalDetails .modalText .pricing .priceDetail label{
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailMenu{
+    display: none;
+  }
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailMenu.active{
+    width: 100%;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-text);
+    flex-direction: column;
+    display: table;
+  }
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailMenu .col{
+   
+    justify-content: space-between;
+    width: 100%;
+  }
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailMenu .col td:first-child{
+    text-align: left;
+  }
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailMenu .col td:last-child{
+    text-align: right;
+  }
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn label{
     font-size: 20px;
     font-weight: bold;
     display: flex;
     align-items: center;
   }
-  .modal .modalDetails .modalText .pricing .priceDetail label svg{
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn label svg{
     color: var(--secondary-text);
     margin-left: 10px;
     font-size: 28px;
   }
-  .modal .modalDetails .modalText .pricing .priceDetail span{
+  .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn span{
     font-size: 16px;
     color: var(--secondary-text);
   }
@@ -874,6 +911,9 @@
     font-size: 20px;
     font-weight: bold;
   }
+  .disable{
+    display: none;
+  }
   .modal .modalDetails .modalText .pricing .addToCartBtn{
     width: 100%;
   }
@@ -886,4 +926,148 @@
     border: none;
     cursor: pointer;
     font-size: 19px;
+}
+@media (max-width: 990px){
+    .modal{
+        padding: 20px;
+    }
+    .modal .modalDetails {
+        flex-direction: column;
+    }
+    .home .homeContainer .filterBar{
+        display: none;
+    }
+    .home .homeContainer .homeShow .categories {
+        display: flex;
+        gap: 10px;
+    }
+    .home .homeContainer .homeShow .categories .categorie {
+        padding: 4px 15px;
+    }
+    .searchBar{
+        background: none;
+        display: flex;
+        align-items: center;
+    }
+    .searchBar .filterDisplayBtn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .searchBar .searchBarContainer .inputField{
+        border: 1px solid var(--secondary-text);
+    }
+}
+@media (max-width: 768px){
+    .home .homeContainer .homeShow .categories .categorie{
+        flex-direction: column;
+    }
+    .searchBar .searchBarContainer .inputField input{
+        width: 400px;
+    }
+    .shopCard{
+        max-width: 40%;
+        cursor: pointer;
+    }
+    .contactSupport{
+        width: 80px;
+        height: 80px;
+        bottom: 8px;
+    }
+    .aboutHome{
+        margin: 0;
+    }
+    .aboutHome .aboutHomeContainer{
+        flex-direction: column;
+    }
+    .aboutHome .aboutHomeContainer .aboutInfo{
+        position: unset;
+    }
+    .aboutHome .aboutHomeContainer .aboutInfo img{
+        position: unset;
+        width: 45px;
+        height: fit-content;
+    }
+    .aboutHome .aboutHomeContainer .aboutInfo .textContent{
+        text-align: left;
+        margin-top: 0px;
+    }
+    .aboutHome .aboutHomeContainer .aboutInfo .textContent h3{
+        margin-top: 0px;
+    }
+    .contactSupport .content svg {
+        font-size: 40px;
+    }
+    .contactSupport .content span {
+        font-size: 11px;
+        font-weight: 500;
+    }
+}
+@media (max-width: 560px){
+    .searchBar .searchBarContainer .inputField input{
+        width: 260px;
+    }
+    .modal .modalDetails .modalText .title{
+        font-size: 14px;
+    }
+    .modal .modalDetails .modalText .weight span{
+        font-size: 14px;
+    }
+    .modal .modalDetails .modalText .weight label {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .modal .modalDetails .modalText .priceSettings span{
+        font-size: 14px;
+    }
+    .modal .modalDetails .modalText .priceSettings label{
+        font-size: 16px;
+    }
+    .modal .modalDetails .modalText{
+        gap: 10px;
+    }
+    .modal .modalDetails .modalText .priceSettings .settings .settingsBtn{
+        padding: 4px;
+        border-radius: 4px;
+
+    }
+    .modal .modalDetails .modalText .priceSettings .settings span{
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .pricing .priceDetail label{
+        font-size: 16px;
+    }
+    .modal .modalDetails .modalText .pricing .totalPrice label{
+        font-size: 16px;
+    }
+    .modal .modalDetails .modalText .pricing{
+        gap: 10px;
+        padding-top: 0;
+    }
+    .home .homeContainer .homeShow .homeContent{
+        gap: 10px;
+    }
+    .shopCard .details .detailsInfo .detailTitle{
+        font-size: 12px;
+    }
+    .shopCard .details .detailsInfo .detailDelivery .Price{
+        font-size: 12px;
+    }
+    .shopCard .details .shopBtn button label{
+        font-size: 12px;
+    }
+    .shopCard .imageContent img{
+        height: 140px;
+    }
+    .shopCard .details .shopBtn button span{
+        font-size: 12px;
+    }
+    .error{
+        font-size: 12px;
+    }
+}
+.error{
+    font-size: 18px;
+    color: #FD2A2A;
+    font-weight: 600;
 }
