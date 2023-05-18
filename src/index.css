@@ -63,3 +63,13 @@ button{
 .ReactFlagsSelect-module_selectBtn__19wW7{
   border: none!important;
 }
+.ReactFlagsSelect-module_selectValue__152eS, .ReactFlagsSelect-module_selectOption__3pcgW{
+  padding: 0!important;
+  margin: 0!important;
+}
+.profileContainer .ReactFlagsSelect-module_selectBtn__19wW7{
+  padding: 0!important;
+}
+.profileContainer  .ReactFlagsSelect-module_label__27pw9, .ReactFlagsSelect-module_secondaryLabel__37t1D{
+  padding-left: 0px!important;
+}
