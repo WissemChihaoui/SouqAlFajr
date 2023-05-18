@@ -13,7 +13,7 @@ const [signupAsk, setSignupAsk] = useState(false)
         <div className='darkBG' onClick={() => setLoginPopup(false)} />
         <div className='modalLogin centered z-100'>
             <Icon icon="material-symbols:close-rounded" onClick={() => setLoginPopup(false)}/>
-            <form>
+            <form className={signupAsk ? "disable" : ""}>
                 <div className='logo importantText'>
                     Souq Al Fajr
                 </div>
@@ -28,7 +28,7 @@ const [signupAsk, setSignupAsk] = useState(false)
                             onSelect={code => setSelected(code)}
                             selected={selected}
                             customLabels={countryPhoneCodes}
-                            placeholder=""
+                            placeholder="Phone Code"
                         />
                            
                         </div>
@@ -47,6 +47,34 @@ const [signupAsk, setSignupAsk] = useState(false)
                 </div>
                 <button type='submit' className='submit'>Login</button>
                 <div className='signup'>Do not have an account ? <a href='#' onClick={()=>setSignupAsk(true)}>Sign up</a></div>
+            </form>
+            <form className={signupAsk ? "" : "disable"}>
+            <div className='logo importantText'>
+                    Souq Al Fajr
+                </div>
+                <h3>
+                    Welcome !
+                </h3>
+                <p>Login to enjoy the features of the application</p>
+                <div className='inputs'>
+                    <div className='phoneNumWrapper input'>
+                        <div className='selectWrapper'>
+                        <ReactFlagsSelect
+                            onSelect={code => setSelected(code)}
+                            selected={selected}
+                            customLabels={countryPhoneCodes}
+                            placeholder="Phone Code"
+                        />
+                           
+                        </div>
+                        
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder='Phone Number'/>
+                    </div>
+                    
+                    
+                </div>
+                <button type='submit' className='submit'>Sign up</button>
+                <div className='signup'>Already have an account ? <a href='#' onClick={()=>setSignupAsk(false)}>Sign in</a></div>
             </form>
         </div>
     </>

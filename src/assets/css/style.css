@@ -16,11 +16,22 @@
     top: 0;
     left: 0;
     width: -webkit-fill-available;
-    padding: 12px;
+    padding: 24px;
     height: 100%;
-    z-index: 10;
+    z-index: 1000;
+    background-color: #F2F2F2;
 }
-.navbar .navbarMenu .navbarMenuExit{
+.navbar .navbarMenu .navbarHeader{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .navbarMenu .navbarHeader h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .navbarMenu .navbarHeader .navbarMenuExit{
     color: var(--secondary-text);
     font-size: 24px;
     float: right;
@@ -30,12 +41,18 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
-    margin: 38px;
+    margin-top: 24px;
 }
+.navbar .navbarMenu .navbarItems hr,
+.navbar .navbarMenu hr {
+    width: 100%;
+    border: none; 
+    border-top: 1px solid var(--primary-color); 
+  }
 .navbar .navbarMenu .navbarItems .navbarItem a{
     color: var(--secondary-text);
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 18px;
     text-decoration: none;
 
     display: flex;
@@ -231,6 +248,7 @@
     background-color: var(--primary-color);
     width: -webkit-fill-available;
     padding: 30px 155px;
+
 }
 .footer .footerContainer{
     display: flex;
@@ -424,7 +442,7 @@
     display: flex;
     gap: 11px;
 }
-.home .homeContainer .filterBar{
+.home .homeContainer .hidden .filterBar{
     background: #FFF1DE;
     border-radius: 8px;
     
@@ -434,35 +452,35 @@
     gap: 24px;
     
     flex: 0 0 20%;
-    max-width: 20%;
+   
 }
-.home .homeContainer .filterBar hr{
+.home .homeContainer .hidden .filterBar hr{
     border:0.5px solid #FFD08F;
     width:100%
 }
-.home .homeContainer .filterBar .filterOptionContainer{
+.home .homeContainer .hidden .filterBar .filterOptionContainer{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle{
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings{
     display: flex;
     align-items: center;
     font-size: 12px;
     gap: 10px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings a{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings a{
     color: var(--primary-color);
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings svg{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings svg{
     font-size: 18px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
     display: flex;
     align-items: center;
     background: none;
@@ -470,34 +488,37 @@
     outline:none;
     padding: 0;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
     font-size: 20px;
     color: var(--secondary-text);
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterTitle h3{
+.home .homeContainer .hidden .filterBar .submitBtn{
+    display: none;
+}
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle h3{
     margin: 0;
     font-size: 18px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs .rangeValues{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .rangeValues{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs .rangeValues span{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .rangeValues span{
     font-weight: bold;
     font-size: 14px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
     background: var(--bg-color);
     color: var(--primary-text);
     border: 1px solid var(--secondary-text);
@@ -507,7 +528,10 @@
     font-size: 14px;
     font-weight: 400;
 }
-.home .homeContainer .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
+.hidden .filterBar .header{
+    display: none;
+}
+.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
     background: var(--primary-color);
     color: var(--white-text);
     border: none;
@@ -718,10 +742,13 @@
     position: relative;
     display: flex;
     justify-content: center;
+    
 }
 .aboutHome .aboutHomeContainer .aboutInfo img{
     position: absolute;
-   top: -67px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .aboutHome .aboutHomeContainer .aboutInfo .textContent{
     margin-top: 60px;
@@ -736,6 +763,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
+    z-index: 1000;
   }
   .centered {
     position: fixed;
@@ -751,6 +779,7 @@
     flex-direction: column;
     gap: 22px;
     width: 75%;
+    z-index: 1001;
   }
   .modal svg{
     font-size: 18px;
@@ -912,7 +941,7 @@
     font-weight: bold;
   }
   .disable{
-    display: none;
+    display: none!important;
   }
   .modal .modalDetails .modalText .pricing .addToCartBtn{
     width: 100%;
@@ -934,8 +963,129 @@
     .modal .modalDetails {
         flex-direction: column;
     }
-    .home .homeContainer .filterBar{
+    .hidden{
         display: none;
+    }
+    .filterBar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: -webkit-fill-available;
+        height: 100%;
+        background: #FFF1DE;
+       
+        z-index: 1000;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        
+    }
+    .filterBar hr{
+        border:0.5px solid #FFD08F;
+        width:100%
+    }
+    .filterBar .filterOptionContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .filterBar .filterOptionContainer .filterTitle{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .filterBar .filterOptionContainer .filterTitle .optionSettings{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        gap: 10px;
+    }
+    .filterBar .filterOptionContainer .filterTitle .optionSettings a{
+        color: var(--primary-color);
+    }
+    .filterBar .filterOptionContainer .filterTitle .optionSettings svg{
+        font-size: 18px;
+    }
+    .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        outline:none;
+        padding: 0;
+    }
+    .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
+        font-size: 20px;
+        color: var(--secondary-text);
+    }
+    .filterBar .filterOptionContainer .filterTitle h3{
+        margin: 0;
+        font-size: 18px;
+    }
+    .filterBar .filterOptionContainer .filterInputs{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .filterBar .filterOptionContainer .filterInputs .rangeValues{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .filterBar .filterOptionContainer .filterInputs .rangeValues span{
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+    .filterBar .submitBtn{
+        display: flex;
+        gap: 12px;
+        
+    }
+    .filterBar .submitBtn .submit{
+        flex: 0 0 75%;
+        
+        background: var(--button-bg);
+        padding: 10px 24px;
+        border-radius: 6px;
+        color: var(--white-text);
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .filterBar .submitBtn .reset{
+        flex: 0 0 25%;
+        background: #BDBDBD;
+        padding: 10px 24px;
+        border-radius: 6px;
+        color: var(--white-text);
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .filterBar .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
+        background: var(--bg-color);
+        color: var(--primary-text);
+        border: 1px solid var(--secondary-text);
+        padding: 4px 16px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
+        background: var(--primary-color);
+        color: var(--white-text);
+        border: none;
     }
     .home .homeContainer .homeShow .categories {
         display: flex;
@@ -1004,6 +1154,9 @@
     }
 }
 @media (max-width: 560px){
+    .modalLogin{
+        width: 80%;
+    }
     .searchBar .searchBarContainer .inputField input{
         width: 260px;
     }
@@ -1081,6 +1234,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    z-index: 1001;
 }
 .modalLogin svg{
     font-size: 22px;
@@ -1133,6 +1287,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    width: 50%;
 }
 .modalLogin form .inputs .phoneNumWrapper .selectWrapper svg{
     font-size: 24px;
@@ -1217,4 +1372,257 @@
     font-weight: 700;
     text-decoration: none;
     
+}
+
+/* --- Phone Verifaction */
+.phoneV{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.phoneV .phoneVContainer{
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+}
+.phoneV .phoneVContainer form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+.phoneV .phoneVContainer form h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.phoneV .phoneVContainer form .phrase{
+    font-size: 16px;
+    font-weight: 700;
+    color:var(--secondary-text);
+}
+.phoneV .phoneVContainer form .inputs{
+    display: flex;
+    gap: 24px;
+}
+.phoneV .phoneVContainer form .inputs input{
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 61px;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.phoneV .phoneVContainer form .timer{
+    color: var(--secondary-text);
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+}
+.phoneV .phoneVContainer form .btnSubmit{
+    width: 100%;
+}
+.phoneV .phoneVContainer form .btnSubmit button{
+    background: var(--button-bg);
+    padding: 10px 24px;
+    border-radius: 6px;
+    color: var(--white-text);
+    font-size: 16px;
+    font-weight: 600;
+    width:100%;
+    margin-bottom: 12px;
+}
+.phoneV .phoneVContainer form .btnSubmit .signup{
+    font-size: 16px;
+    font-weight: 700;
+}
+.phoneV .phoneVContainer form .btnSubmit .signup a{
+    color: #39C5A3;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    
+}
+@media (max-width: 768px) {
+    .phoneV .phoneVContainer{
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+    .phoneV .phoneVContainer img{
+        width: 100px
+    }
+}
+
+/* -----------About US */
+.aboutus{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+.aboutus header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aboutus header .ornageBlurBg{
+    position: absolute;
+    background: linear-gradient(180deg, #FD572A 0%, #F0951D 100%);
+    filter: blur(132.514px);
+    width: 50%;
+    height: 65%;
+    z-index: 1;
+}
+.aboutus header .content{
+    z-index: 10;
+}
+.aboutus header .content h2{
+    font-size: 40px;
+}
+.aboutus header .content .screens{
+    display: flex;
+
+    justify-content: center;
+}
+.aboutus .container{
+    margin-left: 90px;
+    margin-right: 90px;
+    display: flex;
+
+    flex-direction: column;
+    gap: 50px;
+}
+.aboutus .container .information{
+    display: flex;
+    margin: 36px 0;
+    justify-content: space-between;
+}
+.aboutus .container .information div{
+    text-align: left;
+    width: 30%;
+}
+.aboutus .container .information div h3{
+    font-size: 34px;
+    font-weight: 700;
+}
+.aboutus .container .information div p{
+    font-size: 18px;
+    font-weight: 400;
+}
+.aboutus .container .contactUs{
+    width: 100%;
+}
+.aboutus .container .contactUs h3{
+    font-size: 34px;
+    font-weight: 700;
+    text-align: left;
+}
+.aboutus .container .contactUs form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    align-items: flex-start;
+}
+.aboutus .container .contactUs form .inputField{
+    border: 1px solid var(--secondary-text);
+    border-radius: 14px;
+    padding: 8px 12px;
+    width: -webkit-fill-available;
+    display: flex;
+}
+.aboutus .container .contactUs form .inputField input,
+.aboutus .container .contactUs form .inputField textarea{
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.aboutus .container .contactUs form .inputField textarea{
+    height: 200px;
+}
+.aboutus .container .contactUs form .submitBtn{
+    width: 100%;
+    display: flex;
+}
+.aboutus .container .contactUs form .submitBtn button{
+    background: var(--button-bg);
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--white-text);
+    width: 30%;
+
+    display: flex;
+}
+.aboutus .container .adress{
+    width: 100%;
+}
+.aboutus .container .adress h3{
+    font-size: 34px;
+    font-weight: 700;
+    text-align: left;
+}
+.aboutus .container .adress p{
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+}
+@media (max-width: 930px){
+    .aboutus .container .information div{
+        width: 45%;
+    }
+    .aboutus header .screens img{
+        width: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .aboutus header .screens img{
+        width: 150px;
+    }
+    .aboutus .container .information{
+        flex-direction: column;
+
+    }
+    .aboutus .container .information div{
+        width: 100%;
+    }
+}
+
+/* ------Empty Search Result */
+
+.emptySearch{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.emptySearch .background{
+    position: absolute;
+}
+.emptySearch .container img{
+    width: 340px;
+    mix-blend-mode: luminosity;
+    filter: grayscale(1);
+}
+.emptySearch .container div button{
+    background: var(--button-bg);
+    padding: 18px 80px;
+    border-radius: 40px;
+    font-size: 16px;
+    color: var(--white-text);
+    
+}
+@media (max-width: 768px){
+    .emptySearch .background{
+        width: 100%;
+    }
 }

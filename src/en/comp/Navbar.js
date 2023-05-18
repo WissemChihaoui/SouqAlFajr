@@ -50,31 +50,39 @@ const Navbar = () => {
             </div>
         </div>
         <div className={menuActive ? "navbarMenu active" : "navbarMenu"}>
-            <div className='navbarMenuExit' onClick={() =>(setmenuActive(false))}>
-                <Icon icon="material-symbols:close-rounded" />
+            <div className='navbarHeader'>
+                <h3 className='importantText'>Souq Al Fajr</h3>
+                <div className='navbarMenuExit' onClick={() =>(setmenuActive(false))}>
+                    <Icon icon="material-symbols:close-rounded" />
+                </div>
             </div>
+            <hr />
             <div className='navbarItems'>
                 <div className='navbarItem'>
                     <a href='#'>About us</a>
                 </div>
+                <hr />
                 <div className='navbarItem'>
                     <a href='#'>
                         <Icon icon="ic:outline-shopping-cart" />
                         <span>Cart</span>
                     </a>
                 </div>
+                <hr />
                 <div className='navbarItem'>
                     <a href='#'>
                         <Icon icon="mdi:user-add-outline" />
                         <span>Sign up</span>
                     </a>
                 </div>
+                <hr />
                 <button className='navbarItem button' >
                     <a href='#' >
                         <Icon icon="mdi:sign-in" />
                         <span>Sign in</span>
                     </a>
                 </button>
+                <hr />
                 <div className='navbarItem'>
                     <a href='#'>
                         <span>AR</span>
