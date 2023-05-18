@@ -7,10 +7,11 @@ import Home from './en/pages/Home';
 import PhoneVerifaction from './en/pages/PhoneVerifaction';
 import AboutUs from './en/pages/AboutUs';
 import Profile from './en/pages/Profile';
+import Cart from './en/pages/Cart';
 function App() {
   return (
     <div className="App">
-      <Profile />
+      <Cart />
     </div>
   );
 }
