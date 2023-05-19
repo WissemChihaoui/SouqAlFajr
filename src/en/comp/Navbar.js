@@ -6,33 +6,40 @@ import Login from '../popups/Login';
 
 const Navbar = () => {
     const [menuActive, setmenuActive] = useState(false);
-    const [loginPopup, setLoginPopup] = useState(false)
-    const handleLoginPopup =()=>{
-        setLoginPopup(!loginPopup);
+    const [loginPopup, setLoginPopup] = useState(false);
+    const [signupDemand, setSignupDemand] = useState(false)
+    const handleLoginPopup =(signup)=>{
+        setLoginPopup(true);
+        if(signup){
+            
+            setSignupDemand(true);
+        }else{
+            setSignupDemand(false)
+        }
     }
   return (
     <div className='navbar'>
         <div className='navbarContainer' >
-            <div className='navbarLogo importantText'>
+            <a className='navbarLogo importantText' href='/'>
                 Souq Al Fajr
-            </div>
+            </a>
             <div className='navbarItems'>
                 <div className='navbarItem'>
-                    <a href='#'>About Us</a>
+                    <a href='/about-us'>About Us</a>
                 </div>
                 <div className='navbarItem'>
-                    <a href='#'>
+                    <a href='/cart'>
                         <Icon icon="ic:outline-shopping-cart" />
                         <span>Cart</span>
                     </a>
                 </div>
                 <div className='navbarItem'>
-                    <a href='#'>
+                    <a href='#' onClick={()=>handleLoginPopup(true)}>
                         <Icon icon="mdi:user-add-outline" />
                         <span>Sign up</span>
                     </a>
                 </div>
-                <button className='navbarItem button' onClick={()=>setLoginPopup(!loginPopup)}>
+                <button className='navbarItem button' onClick={()=>handleLoginPopup(false)}>
                     <a href='#'>
                         <Icon icon="mdi:sign-in" />
                         <span>Sign in</span>
@@ -91,7 +98,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        {loginPopup && <Login setLoginPopup={setLoginPopup}/>}
+        {loginPopup && <Login setLoginPopup={setLoginPopup} signupDemand={signupDemand}/>}
     </div>
   )
 }

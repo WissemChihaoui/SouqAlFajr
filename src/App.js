@@ -1,4 +1,6 @@
+import React from 'react'
 
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import Register from './en/pages/Register'
 import './assets/css/style.css'
@@ -11,7 +13,17 @@ import Cart from './en/pages/Cart';
 function App() {
   return (
     <div className="App">
-      <Cart />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' exact element={<Home />}/>
+          <Route path='/password-reset' exact element={<PasswordReset />}/>
+          <Route path='/phone-verifaction' exact element={<PhoneVerifaction />}/>
+          <Route path='/about-us' exact element={<AboutUs />}/>
+          <Route path='/profile' exact element={<Profile />}/>
+          <Route path='/cart' exact element={<Cart />}/>
+          <Route path='/register' exact element={<Register />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

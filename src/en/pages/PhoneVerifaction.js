@@ -3,6 +3,7 @@ import Navbar from '../comp/Navbar'
 import phoneV from '../../assets/img/phoneV.png'
 import Timer from '../../assets/lib/Timer';
 import Footer from '../comp/Footer';
+import { useNavigate } from "react-router-dom";
 const PhoneVerifaction = () => {
     const [code, setCode] = useState(['', '', '', '']);
     const inputRefs = useRef([]);
@@ -10,6 +11,10 @@ const PhoneVerifaction = () => {
         // Handle the timeout event
         console.log('Time is up!');
       };
+      const navigate = useNavigate();
+        const handleSignup = ()=>{
+        navigate('/register')
+}
     const handleInputChange = (e, index) => {
         const { value } = e.target;
         if (value.length > 1) {
@@ -51,7 +56,7 @@ const PhoneVerifaction = () => {
                         &nbsp;minutes
                     </div>
                     <div className='btnSubmit'>
-                        <button type='submit' className='submit'>Sign up</button>
+                        <button type='submit' className='submit' onClick={()=>handleSignup()}>Sign up</button>
                         <div className='signup'>Did not recieve the code ? <a href='#'>Resend</a></div>
                     </div>
                 </form>

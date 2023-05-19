@@ -72,7 +72,7 @@ const Cart = () => {
                 </div>
                 <div className='invoiceDetails'>
                     <div className='title'>
-                        <Icon icon="la:shipping-fast" />
+                        <Icon icon="basil:invoice-outline" />
                         <h2>Invoice Details</h2>
                     </div>
                     <div className='invoiceDetailsContainer'>

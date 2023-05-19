@@ -3,12 +3,17 @@ import { Icon } from '@iconify/react';
 import Select from 'react-select';
 import ReactFlagsSelect from "react-flags-select";
 import countryPhoneCodes from '../../assets/lib/PhoneCode'
-
-const Login = ({setLoginPopup}) => {
+import { useNavigate } from "react-router-dom";
+const Login = ({setLoginPopup , signupDemand}) => {
 const [pswHide, setPswHide] = useState(true)
 const [selected, setSelected] = useState("");
-const [signupAsk, setSignupAsk] = useState(false)
+const [signupAsk, setSignupAsk] = useState(signupDemand)
+const navigate = useNavigate();
+const handleSignup = ()=>{
+        navigate('/phone-verifaction')
+}
   return (
+   
     <>
         <div className='darkBG' onClick={() => setLoginPopup(false)} />
         <div className='modalLogin centered z-100'>
@@ -41,7 +46,7 @@ const [signupAsk, setSignupAsk] = useState(false)
                             <input type={pswHide ? "password" : "text"} placeholder="Confirm password" />
                             <Icon icon={pswHide ? "mdi:eye-outline" :"mdi:eye-off-outline"} onClick={() => setPswHide(!pswHide)}/>
                         </div>
-                        <a href='#'>Forgot Password?</a>
+                        <a href='/password-reset'>Forgot Password?</a>
                     </div>
                     
                 </div>
@@ -55,7 +60,7 @@ const [signupAsk, setSignupAsk] = useState(false)
                 <h3>
                     Welcome !
                 </h3>
-                <p>Login to enjoy the features of the application</p>
+                <p>Welcome !, Please enter your phone number </p>
                 <div className='inputs'>
                     <div className='phoneNumWrapper input'>
                         <div className='selectWrapper'>
@@ -73,7 +78,7 @@ const [signupAsk, setSignupAsk] = useState(false)
                     
                     
                 </div>
-                <button type='submit' className='submit'>Sign up</button>
+                <button type='submit' className='submit' onClick={()=>handleSignup()}>Sign up</button>
                 <div className='signup'>Already have an account ? <a href='#' onClick={()=>setSignupAsk(false)}>Sign in</a></div>
             </form>
         </div>
