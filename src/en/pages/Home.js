@@ -15,14 +15,21 @@ import Steps from '../comp/Steps';
 import ContactUsIcon from '../comp/ContactUsIcon';
 import EmptySearch from '../comp/EmptySearch';
 import FilterSection from '../comp/FilterSection';
+
 const Home = () => {
+    let currentRow = 1;
+    const [selectedCategory, setSelectedCategory] = useState('');
     const [filterSectionOpen, setFilterSectionOpen] = useState(false)
     const [isOpen, setIsOpen] = useState(false);
-    
     
     const openModal = (newState) => {
         setIsOpen(newState);
     };
+
+    const handleCategorySelect = (category) => {
+        setSelectedCategory(category);
+      };
+    
   return (
     <div style={{"position":"relative"}}>
         <Navbar />
@@ -46,34 +53,41 @@ const Home = () => {
                
                 <div className='homeShow'>
                     <div className='categories'>
-                        <div className='categorie'>
+                        <div className={`categorie ${selectedCategory === 'vegetable' ? 'active' : ''}`} onClick={() => handleCategorySelect('vegetable')}>
                             <div className='categorieIcon' style={{'backgroundColor':'#f0f9f0'}}>
                                 <img src={vegetable} />
                             </div>
                             <span>Vegetable</span>
                         </div>
-                        <div className='categorie'>
+                        <div className={`categorie ${selectedCategory === 'fruit' ? 'active' : ''}`} onClick={() => handleCategorySelect('fruit')} >
                             <div className='categorieIcon' style={{'backgroundColor':'#FFE9E5'}}>
                                 <img src={fruit} />
                             </div>
                             <span>Fruit</span>
                         </div>
-                        <div className='categorie'>
+                        <div className={`categorie ${selectedCategory === 'dates' ? 'active' : ''}`} onClick={() => handleCategorySelect('dates')}>
                             <div className='categorieIcon' style={{'backgroundColor':'#FFF6E3'}}>
                                 <img src={dates} />
                             </div>
                             <span>Dates</span>
                         </div>
-                        <div className='categorie'>
+                        <div className={`categorie ${selectedCategory === 'fish' ? 'active' : ''}`}  onClick={() => handleCategorySelect('fish')}>
                             <div className='categorieIcon' style={{'backgroundColor':'#F1FCFD'}}>
                                 <img src={fish} />
                             </div>
                             <span>Fish</span>
                         </div>
+                        
                     </div>
                     <div className='homeContent'>
-                        <ShopCard />
-                        
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
+                        <ShopCard openModal={openModal}/>
                     </div>  
                         
                 </div>

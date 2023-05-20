@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import onion from '../../assets/img/onion.jpg'
 const ProductCard = ({setIsOpen}) => {
   const [qte, setQte] = useState(0)
-  const [available, setAvailable] = useState(false)
+  const [available, setAvailable] = useState(true)
   const [openPrice, setOpenPrice] = useState(false)
   const handleQte=(x)=>{
     let sum = x+qte;
@@ -29,19 +29,27 @@ const ProductCard = ({setIsOpen}) => {
             </div>
           </div>
           <div className='modalText'>
-            <div className='title'>
-              <div className='detailTitle'>
-                Red Onion High Quality
-              </div>
-              <div className='unitPrice importantText'>
-                2.99 R.S
-                <sup>per kilo</sup>
+            <div className='a' style={{"display":"flex", "align-items" : "center", "justify-content" : "space-between"}}>
+            <div style={{"display" : "flex", "flexDirection": "column", "gap":"16px"}}>
+
+            
+<div className='title'>
+  <div className='detailTitle'>
+    Red Onion High Quality
+  </div>
+  
+</div>
+<div className='weight'>
+  <span>Weight</span>
+  <label>10 kg</label>
+</div>
+</div>
+            <div className='unitPrice' style={{"display": "flex", "flexDirection" : "column" , "gap" : "16px"}}>
+                <div className="importantText" style={{"fontSize": "22.4px" , "fontWeight" : "700"}}>2.99 R.S</div>
+                <sup style={{"color" : "var(--secondary-text)"}}>per kilo</sup>
               </div>
             </div>
-            <div className='weight'>
-              <span>Weight</span>
-              <label>10 kg</label>
-            </div>
+            
             <div className='weight'>
               <span>Market</span>
               <label>Al Dammam</label>

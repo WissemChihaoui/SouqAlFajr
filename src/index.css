@@ -16,7 +16,7 @@
 }
 body {
   margin: 0;
-
+  user-select: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -72,4 +72,7 @@ button{
 }
 .profileContainer  .ReactFlagsSelect-module_label__27pw9, .ReactFlagsSelect-module_secondaryLabel__37t1D{
   padding-left: 0px!important;
+}
+.w-80{
+  width: 80%;
 }

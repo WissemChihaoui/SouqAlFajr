@@ -194,10 +194,31 @@
     gap:10px;
     align-items: center;
 }
-.register .registerContainer form .submit .submitCheck input{
+.register .registerContainer form .submit .submitCheck input[type="checkbox"]{
     outline: 2px solid black;
     border-radius: 4px;
 }
+.checkbox-custom {
+    width: 10px;
+    height: 10px;
+    border: 3px solid #000;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+.custom-checkbox:checked + .checkbox-label .checkbox-custom {
+    background-color: #000;
+  }
+  .custom-checkbox {
+    display: none;
+  }
+  
 .register .registerContainer form .submit .submitCheck span{
     font-size: 14px;
     font-weight: 700;
@@ -442,6 +463,9 @@
     display: flex;
     gap: 11px;
 }
+.home .homeContainer .hidden {
+    width: 25%;
+}
 .home .homeContainer .hidden .filterBar{
     background: #FFF1DE;
     border-radius: 8px;
@@ -503,6 +527,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    
+}
+.hidden-over{
+    overflow: hidden;
+}
+.scroll{
+    overflow: scroll!important;
 }
 .home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .rangeValues{
     width: 100%;
@@ -554,7 +585,7 @@
     background: var(--bg-color);
     border: 1px solid #E0E0E0;
     border-radius: 8px;
-    width: -webkit-fill-available;
+    width: 20%;
     cursor: pointer;
     transition: ease-in 300ms all;
 }
@@ -582,13 +613,13 @@
 .home .homeContainer .homeShow .homeContent{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
     gap: 24px;
 }
 
 /* -------ShopCard */
 .shopCard{
-    padding: 12px;
+    padding: 12px 24px;
     border: 1px solid #E0E0E0;
     display: flex;
     flex-direction: column;
@@ -596,7 +627,7 @@
     border-radius: 8px;
     align-items: center;
 
-    max-width: 25%;
+    width:20%;
 }
 .shopCard .imageContent {
     position: relative;
@@ -634,6 +665,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
 }
 .shopCard .details .detailsInfo .detailTitle{
     font-size: 18px;
@@ -681,7 +713,7 @@
     border: none;
     cursor: pointer;
     font-size: 14px;
-
+    gap: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -778,16 +810,19 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-    width: 75%;
+    width: 86.58472222%;
+    height: 70%;
     z-index: 1001;
   }
   .modal svg{
-    font-size: 18px;
+    font-size: 26px;
     cursor: pointer;
+    color: var(--secondary-text);
   }
   .modal .modalDetails{
     display: flex;
-    gap:22px
+    gap:22px;
+    height: 90%;
   }
   .modal .modalDetails .modalPicture{
     display: flex;
@@ -797,7 +832,7 @@
   }
   .modal .modalDetails .modalPicture .pictures{
     width: 100%;
-    height: 400px;
+    height: 100%;
     position: relative;
   }
   .modal .modalDetails .modalPicture .pictures img{
@@ -819,6 +854,16 @@
     font-size: 26px;
     font-weight: 700;
     
+  }
+  .modal .modalDetails .modalText .title .a .unitPrice{
+    display: flex;
+    flex-direction: column;
+  }
+  .modal .modalDetails .modalText .title .a .unitPrice sup{
+    color: var(--secondary-text);
+    font-size: 11px;
+    font-weight: 400;
+    background: none;
   }
   .modal .modalDetails .modalText  .weight{
     display: flex;
@@ -861,7 +906,7 @@
   .modal .modalDetails .modalText .priceSettings .settings .settingsBtn{
     font-size: 16px;
     font-weight: 600;
-    color: var(--white-text);
+    color: var(--white-text)!important;
     padding: 8px;
     background: var(--primary-color);
     border-radius: 12px;
@@ -869,6 +914,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
+  .modal .modalDetails .modalText .priceSettings .settings .settingsBtn svg{
+    color: var(--white-text);
   }
   .modal .modalDetails .modalText .priceSettings .settings span{
     font-size: 20px;
@@ -1084,6 +1132,7 @@
     }
     .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
         background: var(--primary-color);
+        border: 1px solid var(--primary-color);
         color: var(--white-text);
         border: none;
     }
@@ -1154,6 +1203,12 @@
     }
 }
 @media (max-width: 560px){
+    .modal .modalDetails .modalPicture .pictures img{
+        height: 230px;
+    }
+    .shopCard{
+        width: 35%;
+    }
     .modalLogin{
         width: 80%;
     }
@@ -1381,6 +1436,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin: 60px 12px;  
 }
 .phoneV .phoneVContainer{
     display: flex;
@@ -1737,7 +1793,6 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
 }
 .cart .cartContainer .title{
     display: flex;
@@ -1808,7 +1863,7 @@
 .cart .cartContainer .container ul li .details .textSection label,
 .cart .cartContainer .container ul li .settings label{
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 4px;
 }
 .cart .cartContainer .container ul li .settings{
@@ -1877,6 +1932,14 @@
     padding: 14px 16px;
     border-radius: 8px;
     background:var(--white-text);
+}
+.cart .shippingContainer .shippingOptionsContainer ul li.active{
+    background: var(--primary-color);
+    color: var(--white-text);
+}
+.cart .shippingContainer .shippingOptionsContainer ul li.active span{
+    color: black;
+    background: var(--white-text);
 }
 .cart .shippingContainer .shippingOptionsContainer ul li label{
     font-size: 16px;

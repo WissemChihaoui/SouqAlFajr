@@ -4,6 +4,8 @@ import Footer from '../comp/Footer'
 import { Icon } from '@iconify/react';
 import onion from '../../assets/img/onion.jpg'
 import DeleteOrder from '../popups/DeleteOrder';
+import CartOption from '../comp/CartOption';
+import ShippingOption from '../comp/ShippingOption';
 const Cart = () => {
     const [deleteOrder, setDeleteOrder] = useState(false)
     const [qte, setQte] = useState(0)
@@ -13,6 +15,7 @@ const Cart = () => {
           setQte(sum)
         }
       }
+      
   return (
     <div className='page'>
         <Navbar />
@@ -39,21 +42,94 @@ const Cart = () => {
                                     <label>2.99 R.S <span>/kg</span></label>
                                 </div>
                             </div>
-                            <div className='settings'>
-                                <label>2.99 RS</label>
-                                <div className='qte'>
-                                    <div className='settingsBtn' onClick={()=>handleQte(1)}>
-                                        <Icon icon="material-symbols:add" />
-                                    </div>
-                                    <span>{qte}</span>
-                                    <div className='settingsBtn' onClick={()=>handleQte(-1)}>
-                                        <Icon icon="ic:sharp-minus" />
-                                    </div>
-                                </div>
-                                <label>100 Kg</label>
-                                <label className='importantText'>29.99 R.S</label>
-                            </div>
+                            <CartOption />
                         </li>
+                        <li>
+                            <div className='details'>
+                                <div className='imageSection'>
+                                    <div className='deleteBtn' onClick={()=>setDeleteOrder(true)}>
+                                        <Icon icon="material-symbols:delete-outline" />
+                                    </div>
+                                    <img src={onion} />
+                                </div>
+                                <div className='textSection'>
+                                    <h6>Red Onion High Quality</h6>
+                                    <label>10 kg</label>
+                                    <label>Al Dammam</label>
+                                    <label>2.99 R.S <span>/kg</span></label>
+                                </div>
+                            </div>
+                            <CartOption />
+                        </li>
+                        <li>
+                            <div className='details'>
+                                <div className='imageSection'>
+                                    <div className='deleteBtn' onClick={()=>setDeleteOrder(true)}>
+                                        <Icon icon="material-symbols:delete-outline" />
+                                    </div>
+                                    <img src={onion} />
+                                </div>
+                                <div className='textSection'>
+                                    <h6>Red Onion High Quality</h6>
+                                    <label>10 kg</label>
+                                    <label>Al Dammam</label>
+                                    <label>2.99 R.S <span>/kg</span></label>
+                                </div>
+                            </div>
+                            <CartOption />
+                        </li>
+                        <li>
+                            <div className='details'>
+                                <div className='imageSection'>
+                                    <div className='deleteBtn' onClick={()=>setDeleteOrder(true)}>
+                                        <Icon icon="material-symbols:delete-outline" />
+                                    </div>
+                                    <img src={onion} />
+                                </div>
+                                <div className='textSection'>
+                                    <h6>Red Onion High Quality</h6>
+                                    <label>10 kg</label>
+                                    <label>Al Dammam</label>
+                                    <label>2.99 R.S <span>/kg</span></label>
+                                </div>
+                            </div>
+                            <CartOption />
+                        </li>
+                        <li>
+                            <div className='details'>
+                                <div className='imageSection'>
+                                    <div className='deleteBtn' onClick={()=>setDeleteOrder(true)}>
+                                        <Icon icon="material-symbols:delete-outline" />
+                                    </div>
+                                    <img src={onion} />
+                                </div>
+                                <div className='textSection'>
+                                    <h6>Red Onion High Quality</h6>
+                                    <label>10 kg</label>
+                                    <label>Al Dammam</label>
+                                    <label>2.99 R.S <span>/kg</span></label>
+                                </div>
+                            </div>
+                            <CartOption />
+                        </li>
+                        <li>
+                            <div className='details'>
+                                <div className='imageSection'>
+                                    <div className='deleteBtn' onClick={()=>setDeleteOrder(true)}>
+                                        <Icon icon="material-symbols:delete-outline" />
+                                    </div>
+                                    <img src={onion} />
+                                </div>
+                                <div className='textSection'>
+                                    <h6>Red Onion High Quality</h6>
+                                    <label>10 kg</label>
+                                    <label>Al Dammam</label>
+                                    <label>2.99 R.S <span>/kg</span></label>
+                                </div>
+                            </div>
+                            <CartOption />
+                        </li>
+                      
                     </ul>
                 </div>
             </div>
@@ -64,10 +140,12 @@ const Cart = () => {
                 </div>
                 <div className='shippingOptionsContainer'>
                     <ul>
-                        <li>
-                            <label>Shipping Riyad</label>
-                            <span>1000 R.S</span>
-                        </li>
+                        <ShippingOption />
+                        <ShippingOption />
+                        <ShippingOption />
+                        <ShippingOption />
+                        <ShippingOption />
+                        
                     </ul>
                 </div>
                 <div className='invoiceDetails'>
