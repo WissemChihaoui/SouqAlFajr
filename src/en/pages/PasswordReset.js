@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import Footer from "../comp/Footer";
 import Navbar from "../comp/Navbar";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 const PasswordReset = () => {
-    const [pswHide, setPswHide] = useState(true)
-    const [rpswHide, setRpswHide] = useState(true)
+  const [pswHide, setPswHide] = useState(true);
+  const [rpswHide, setRpswHide] = useState(true);
   return (
-    <div className='page'>
+    <div className="page">
       <Navbar />
       <div className="passwordReset">
         <div className="passwordResetContainer">
@@ -34,8 +34,8 @@ const PasswordReset = () => {
                 onClick={() => setRpswHide(!rpswHide)}
               />
             </div>
-            <div className='submitButton'>
-                <button type='submit'>Register</button>
+            <div className="submitButton">
+              <button type="submit">Register</button>
             </div>
           </form>
         </div>

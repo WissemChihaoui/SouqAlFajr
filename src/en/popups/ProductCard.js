@@ -29,16 +29,18 @@ const ProductCard = ({ setIsOpen }) => {
         <div className="modalDetails">
           <div className="modalPicture">
             <div className="pictures">
-            <div className="picture-slider">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            style={{ display: index === activeIndex ? 'block' : 'none' }}
-          />
-        ))}
-      </div>
+              <div className="picture-slider">
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    style={{
+                      display: index === activeIndex ? "block" : "none",
+                    }}
+                  />
+                ))}
+              </div>
               <div className="productBadge availableProduct">Available</div>
             </div>
             <div className="pagination-dots">
@@ -83,12 +85,7 @@ const ProductCard = ({ setIsOpen }) => {
                   gap: "16px",
                 }}
               >
-                <div
-                  className="importantText price"
-                  
-                >
-                  2.99 R.S
-                </div>
+                <div className="importantText price">2.99 R.S</div>
                 <sup style={{ color: "var(--secondary-text)" }}>per kilo</sup>
               </div>
             </div>

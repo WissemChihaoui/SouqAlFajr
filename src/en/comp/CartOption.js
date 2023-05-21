@@ -1,14 +1,13 @@
-import React,{useState} from 'react'
-import { Icon } from '@iconify/react';
+import React, { useState } from "react";
+import { Icon } from "@iconify/react";
 const CartOption = () => {
-    
-    const [qte, setQte] = useState(0)
-    const handleQte=(x)=>{
-        let sum = x+qte;
-        if(sum >= 0){
-          setQte(sum)
-        }
-      }
+  const [qte, setQte] = useState(0);
+  const handleQte = (x) => {
+    let sum = x + qte;
+    if (sum >= 0) {
+      setQte(sum);
+    }
+  };
   return (
     <div className="settings">
       <label>2.99 RS</label>
@@ -25,6 +24,6 @@ const CartOption = () => {
       <label className="importantText">29.99 R.S</label>
     </div>
   );
-}
+};
 
-export default CartOption
+export default CartOption;

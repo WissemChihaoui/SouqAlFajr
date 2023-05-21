@@ -5,34 +5,44 @@ const FilterSection = ({ setFilterSectionOpen }) => {
   const [rangeMin, setRangeMin] = useState(1);
   const [rangeMax, setRangeMax] = useState(50);
   const [selectedProducts, setSelectedProducts] = useState([]);
-  const [selectedMarket, setSelectedMarket] = useState([])
+  const [selectedMarket, setSelectedMarket] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [selectMarketAll, setSelectMarketAll] = useState(false);
 
-  const [showProduct, setShowProduct] = useState(true)
-  const [showMarket, setShowMarket] = useState(true)
-const [selectedOnDemand, setSelectedOnDemand] = useState(false)
-const productType = [
-  "Tomato",
-  "Carrot",
-  "Cucumber",
-  "Potato",
-  "Broccoli",
-  "Spinach",
-  "Eggplant",
-  "Bell Pepper",
-  "Zucchini",
-  "Onion",
-  "Radish",
-  "Lettuce",
-  "Cabbage",
-  "Celery",
-  "Mushroom"
-];
+  const [showProduct, setShowProduct] = useState(true);
+  const [showMarket, setShowMarket] = useState(true);
+  const [selectedOnDemand, setSelectedOnDemand] = useState(false);
+  const productType = [
+    "Tomato",
+    "Carrot",
+    "Cucumber",
+    "Potato",
+    "Broccoli",
+    "Spinach",
+    "Eggplant",
+    "Bell Pepper",
+    "Zucchini",
+    "Onion",
+    "Radish",
+    "Lettuce",
+    "Cabbage",
+    "Celery",
+    "Mushroom",
+  ];
 
-  const marketOptions=["Riyadh", "Jeddah", "Al Khobar", "Al Dammam","Mahdia","Monastir","Sousse","Sfax","Tunis"];
-  const [selectedAvailability, setSelectedAvailability] = useState(false)
-  const [selectAllAvaialability, setSelectAllAvaialability] = useState(false)
+  const marketOptions = [
+    "Riyadh",
+    "Jeddah",
+    "Al Khobar",
+    "Al Dammam",
+    "Mahdia",
+    "Monastir",
+    "Sousse",
+    "Sfax",
+    "Tunis",
+  ];
+  const [selectedAvailability, setSelectedAvailability] = useState(false);
+  const [selectAllAvaialability, setSelectAllAvaialability] = useState(false);
   useEffect(() => {
     if (selectedProducts.length === productType.length) {
       setSelectAll(true);
@@ -41,26 +51,26 @@ const productType = [
     }
   }, [selectedProducts, productType]);
 
-  useEffect(()=>{
-    if(selectedAvailability && selectedOnDemand){
-        setSelectAllAvaialability(true)
-    }else{
-        setSelectAllAvaialability(false)
+  useEffect(() => {
+    if (selectedAvailability && selectedOnDemand) {
+      setSelectAllAvaialability(true);
+    } else {
+      setSelectAllAvaialability(false);
     }
-  })
+  });
 
   useEffect(() => {
     if (selectedMarket.length === marketOptions.length) {
-        setSelectMarketAll(true);
+      setSelectMarketAll(true);
     } else {
-        setSelectMarketAll(false);
+      setSelectMarketAll(false);
     }
   }, [selectedProducts, productType]);
 
   const handleSliderAfterChange = (values) => {
     if (values[0] >= values[1]) {
-      setRangeMin(values[1]-1);
-      setRangeMax(values[1])
+      setRangeMin(values[1] - 1);
+      setRangeMax(values[1]);
     }
   };
 
@@ -76,17 +86,17 @@ const productType = [
     }
   };
 
-  const selectAllAvailability = () =>{
-    if(selectAllAvaialability){
-        setSelectedAvailability(false)
-        setSelectedOnDemand(false)
-        setSelectAllAvaialability(false)
-    }else{
-        setSelectedAvailability(true)
-        setSelectedOnDemand(true)
-        setSelectAllAvaialability(true)
+  const selectAllAvailability = () => {
+    if (selectAllAvaialability) {
+      setSelectedAvailability(false);
+      setSelectedOnDemand(false);
+      setSelectAllAvaialability(false);
+    } else {
+      setSelectedAvailability(true);
+      setSelectedOnDemand(true);
+      setSelectAllAvaialability(true);
     }
-  }
+  };
 
   const handleOptionClick = (option) => {
     if (selectedMarket.includes(option)) {
@@ -97,20 +107,19 @@ const productType = [
   };
 
   const handleRangeChange = (values) => {
-    if(values[0]!==values[1]){
+    if (values[0] !== values[1]) {
       setRangeMin(values[0]);
       setRangeMax(values[1]);
     }
-   
   };
-  const handleSelectMarketAll = () =>{
+  const handleSelectMarketAll = () => {
     if (selectMarketAll) {
-        setSelectedMarket([])
+      setSelectedMarket([]);
     } else {
-        setSelectedMarket(marketOptions)
+      setSelectedMarket(marketOptions);
     }
-    setSelectMarketAll(!selectMarketAll)
-  }
+    setSelectMarketAll(!selectMarketAll);
+  };
 
   const handleSelectAll = () => {
     if (selectAll) {
@@ -168,13 +177,24 @@ const productType = [
                 {selectAll ? "Deselect All" : "Select All"}
               </a>
               <Icon icon="carbon:dot-mark" />
-              <button className="expandBtn" onClick={()=>setShowProduct(!showProduct)}>
-              {showProduct? "Show All" : "Show Less"}
-                <Icon icon={showProduct? "material-symbols:arrow-drop-down-rounded" : "material-symbols:arrow-drop-up-rounded"}/>
+              <button
+                className="expandBtn"
+                onClick={() => setShowProduct(!showProduct)}
+              >
+                {showProduct ? "Show All" : "Show Less"}
+                <Icon
+                  icon={
+                    showProduct
+                      ? "material-symbols:arrow-drop-down-rounded"
+                      : "material-symbols:arrow-drop-up-rounded"
+                  }
+                />
               </button>
             </div>
           </div>
-          <div className={`filterInputs ${showProduct ? 'hidden-over' : 'scroll'}`} >
+          <div
+            className={`filterInputs ${showProduct ? "hidden-over" : "scroll"}`}
+          >
             <div className="optionBadgeContainer">
               {productType.map((product, index) => (
                 <div
@@ -195,25 +215,41 @@ const productType = [
           <div className="filterTitle">
             <h3>Origin Market</h3>
             <div className="optionSettings">
-              <a href="#" onClick={handleSelectMarketAll}> {selectMarketAll ? 'Deselect All' : 'Select All'}</a>
+              <a href="#" onClick={handleSelectMarketAll}>
+                {" "}
+                {selectMarketAll ? "Deselect All" : "Select All"}
+              </a>
               <Icon icon="carbon:dot-mark" />
-              <button className="expandBtn" onClick={()=>setShowMarket(!showMarket)}>
+              <button
+                className="expandBtn"
+                onClick={() => setShowMarket(!showMarket)}
+              >
                 {showMarket ? "Show All" : "Show Less"}
-                <Icon icon={showMarket? "material-symbols:arrow-drop-down-rounded" : "material-symbols:arrow-drop-up-rounded"} />
+                <Icon
+                  icon={
+                    showMarket
+                      ? "material-symbols:arrow-drop-down-rounded"
+                      : "material-symbols:arrow-drop-up-rounded"
+                  }
+                />
               </button>
             </div>
           </div>
-          <div className={`filterInputs ${showMarket ? 'hidden-over' : 'scroll'}`} >
+          <div
+            className={`filterInputs ${showMarket ? "hidden-over" : "scroll"}`}
+          >
             <div className="optionBadgeContainer">
-            {marketOptions.map((option, index) => (
-            <div
-              key={index}
-              className={`badge ${selectedMarket.includes(option) ? 'active' : ''}`}
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </div>
-          ))}
+              {marketOptions.map((option, index) => (
+                <div
+                  key={index}
+                  className={`badge ${
+                    selectedMarket.includes(option) ? "active" : ""
+                  }`}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  {option}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -222,7 +258,10 @@ const productType = [
           <div className="filterTitle">
             <h3>Availability</h3>
             <div className="optionSettings">
-              <a href="#" onClick={selectAllAvailability}> {selectAllAvaialability ? 'Diselect All' : 'Select All'}</a>
+              <a href="#" onClick={selectAllAvailability}>
+                {" "}
+                {selectAllAvaialability ? "Diselect All" : "Select All"}
+              </a>
               <Icon icon="carbon:dot-mark" />
               <button className="expandBtn">
                 Show All
@@ -232,8 +271,18 @@ const productType = [
           </div>
           <div className="filterInputs">
             <div className="optionBadgeContainer">
-              <div className={`badge ${selectedAvailability? 'active' : ''}`}  onClick={() => setSelectedAvailability(!selectedAvailability)}>Available</div>
-              <div className={`badge ${selectedOnDemand ? 'active' : ''}`}  onClick={() => setSelectedOnDemand(!selectedOnDemand)}>On Demand</div>
+              <div
+                className={`badge ${selectedAvailability ? "active" : ""}`}
+                onClick={() => setSelectedAvailability(!selectedAvailability)}
+              >
+                Available
+              </div>
+              <div
+                className={`badge ${selectedOnDemand ? "active" : ""}`}
+                onClick={() => setSelectedOnDemand(!selectedOnDemand)}
+              >
+                On Demand
+              </div>
             </div>
           </div>
         </div>
