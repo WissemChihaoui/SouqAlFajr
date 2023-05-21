@@ -122,6 +122,10 @@
         font-weight: 700;
         font-size: 18px;
     }
+    .home .homeContainer .homeShow .homeContent{
+        justify-content: center;
+    }
+    
 }
 
 /* -------Register */
@@ -335,11 +339,7 @@
     font-size: 18px;
     font-weight: 400;
 }
-@media(max-width: 1090px){
-    .footer{
-        padding: 30px 45px;
-    }
-}
+
 @media(max-width: 890px){
     .footer .footerContainer{
         flex-direction: column;
@@ -466,10 +466,10 @@
 .home .homeContainer .hidden {
     width: 25%;
 }
-.home .homeContainer .hidden .filterBar{
+.filterBar{
     background: #FFF1DE;
     border-radius: 8px;
-    
+    height: 100%;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -478,52 +478,56 @@
     flex: 0 0 20%;
    
 }
-.home .homeContainer .hidden .filterBar hr{
+.filterBar hr{
     border:0.5px solid #FFD08F;
     width:100%
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer{
+.filterBar .filterOptionContainer{
     display: flex;
     flex-direction: column;
     gap: 8px;
+    
+    max-height: 90px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle{
+.filterBar .filterOptionContainer .filterTitle{
     display: flex;
     width: 100%;
+    direction: ltr;
     justify-content: space-between;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings{
+.filterBar .filterOptionContainer .filterTitle .optionSettings{
     display: flex;
     align-items: center;
     font-size: 12px;
     gap: 10px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings a{
+.filterBar .filterOptionContainer .filterTitle .optionSettings a{
     color: var(--primary-color);
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings svg{
-    font-size: 18px;
+.filterBar .filterOptionContainer .filterTitle .optionSettings svg{
+    font-size: 8px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
+.filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn{
     display: flex;
     align-items: center;
     background: none;
     border: none;
     outline:none;
+    font-size: 10px;
     padding: 0;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
+.filterBar .filterOptionContainer .filterTitle .optionSettings .expandBtn svg{
     font-size: 20px;
     color: var(--secondary-text);
 }
-.home .homeContainer .hidden .filterBar .submitBtn{
+.filterBar .submitBtn{
     display: none;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterTitle h3{
+.filterBar .filterOptionContainer .filterTitle h3{
     margin: 0;
-    font-size: 18px;
+    font-size: 14px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs{
+.filterBar .filterOptionContainer .filterInputs{
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -533,23 +537,26 @@
     overflow: hidden;
 }
 .scroll{
-    overflow: scroll!important;
+    overflow-y: scroll!important;
+    direction: rtl;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .rangeValues{
+.filterBar .filterOptionContainer .filterInputs .rangeValues{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .rangeValues span{
+.filterBar .filterOptionContainer .filterInputs .rangeValues span{
     font-weight: bold;
     font-size: 14px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
+.filterBar .filterOptionContainer .filterInputs .optionBadgeContainer{
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
+    direction: ltr;
+    padding-left: 12px;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
+.filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge{
     background: var(--bg-color);
     color: var(--primary-text);
     border: 1px solid var(--secondary-text);
@@ -559,10 +566,10 @@
     font-size: 14px;
     font-weight: 400;
 }
-.hidden .filterBar .header{
+.filterBar .header{
     display: none;
 }
-.home .homeContainer .hidden .filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
+.filterBar .filterOptionContainer .filterInputs .optionBadgeContainer .badge.active{
     background: var(--primary-color);
     color: var(--white-text);
     border: none;
@@ -578,16 +585,7 @@
     gap: 24px;
 }
 .home .homeContainer .homeShow .categories .categorie{
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--bg-color);
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    width: 20%;
-    cursor: pointer;
-    transition: ease-in 300ms all;
+    
 }
 .home .homeContainer .homeShow .categories .categorie:hover{
     background-color: #FFD08F;
@@ -614,12 +612,12 @@
     display: flex;
     flex-wrap: wrap;
     
-    gap: 24px;
+    gap: 23px;
 }
 
 /* -------ShopCard */
 .shopCard{
-    padding: 12px 24px;
+    padding: 12px 19.95px;
     border: 1px solid #E0E0E0;
     display: flex;
     flex-direction: column;
@@ -627,7 +625,6 @@
     border-radius: 8px;
     align-items: center;
 
-    width:20%;
 }
 .shopCard .imageContent {
     position: relative;
@@ -675,17 +672,23 @@
 .shopCard .details .detailsInfo .detailWeight{
     font-size: 18px;
     font-weight: 700;
-    line-height: 18px;
+    
+    display: flex;
 }
-.shopCard .details .detailsInfo .detailWeight sup{
+.shopCard .details .detailsInfo .detailWeight small{
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
+    color: var(--secondary-text);
 }
 .shopCard .details .detailsInfo .detailDelivery{
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+.price{
+    font-size: 22px;
+    font-weight: 700;
 }
 .shopCard .details .detailsInfo .detailDelivery span{
     font-weight: 400;
@@ -695,9 +698,12 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 18px;
+    display: flex;
 }
-.shopCard .details .detailsInfo .detailDelivery .Price sup{
+.shopCard .details .detailsInfo .detailDelivery .Price small{
     font-weight: 400;
+    background: none;
+    -webkit-text-fill-color:var(--secondary-text);
     font-size: 12px;
     color: var(--secondary-text);
 }
@@ -719,14 +725,15 @@
     justify-content: space-between;
 }
 .shopCard .details .shopBtn button label{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 }
 .shopCard .details .shopBtn button span{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
+    display: flex;
 }
-.shopCard .details .shopBtn button span sup{
+.shopCard .details .shopBtn button span small{
     font-weight: 400;
     font-size: 12px;
 }
@@ -810,8 +817,8 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-    width: 86.58472222%;
-    height: 70%;
+    width: 78.584722%;
+    height: 80%;
     z-index: 1001;
   }
   .modal svg{
@@ -829,10 +836,13 @@
     flex-direction: column;
     gap: 8px;
     flex-grow: 10;
+    flex: 0 0 55%;
+    max-width: 55%;
   }
   .modal .modalDetails .modalPicture .pictures{
     width: 100%;
     height: 100%;
+    overflow: hidden;
     position: relative;
   }
   .modal .modalDetails .modalPicture .pictures img{
@@ -902,6 +912,7 @@
   .modal .modalDetails .modalText .priceSettings .settings{
     display: flex;
     gap: 30px;
+    align-items: center;
   }
   .modal .modalDetails .modalText .priceSettings .settings .settingsBtn{
     font-size: 16px;
@@ -1136,11 +1147,11 @@
         color: var(--white-text);
         border: none;
     }
-    .home .homeContainer .homeShow .categories {
+    .containerFluid .mainRow .shopRow .container .categories .categorieRow .categories {
         display: flex;
         gap: 10px;
     }
-    .home .homeContainer .homeShow .categories .categorie {
+    .containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie {
         padding: 4px 15px;
     }
     .searchBar{
@@ -1158,14 +1169,13 @@
     }
 }
 @media (max-width: 768px){
-    .home .homeContainer .homeShow .categories .categorie{
+    .containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie{
         flex-direction: column;
     }
     .searchBar .searchBarContainer .inputField input{
         width: 400px;
     }
     .shopCard{
-        max-width: 40%;
         cursor: pointer;
     }
     .contactSupport{
@@ -1204,11 +1214,9 @@
 }
 @media (max-width: 560px){
     .modal .modalDetails .modalPicture .pictures img{
-        height: 230px;
+        height: 100%;
     }
-    .shopCard{
-        width: 35%;
-    }
+   
     .modalLogin{
         width: 80%;
     }
@@ -2064,4 +2072,331 @@
     border-radius: 12px;
     font-size: 14px;
     cursor: pointer;
+}
+
+/* Fixing Home Page  */
+
+.containerFluid{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+
+}
+.containerFluid .mainRow{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    margin-top: 60px;
+
+}
+.containerFluid .mainRow .filterRow{
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.containerFluid .mainRow .shopRow {
+    flex: 0 0 75%;
+    max-width: 75%;
+
+
+}
+.containerFluid .mainRow .shopRow .container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.containerFluid .mainRow .shopRow .container .categories{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-bottom: 0.25rem !important;
+    display: flex;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow{
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.containerFluid .mainRow .shopRow .container .cards{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-bottom: 0.25rem !important;
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 1043px;
+    overflow-y: scroll;
+    direction: rtl;
+    z-index: 2;
+}
+.rtl{
+    direction: rtl;
+}
+.cards::-webkit-scrollbar {
+    width: 8px;
+}
+.cards::-webkit-scrollbar-track {
+    background:none;
+}
+  
+.cards::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 24px;
+}
+.scroll::-webkit-scrollbar{
+    width: 4px;
+}
+.scroll::-webkit-scrollbar-track{
+    background: none;
+}
+.scroll::-webkit-scrollbar-thumb{
+    background-color: #D9D9D9;
+    border-radius: 24px;
+}
+.containerFluid .mainRow .shopRow .container .cards .card{
+    flex: 0 0 25%;
+    direction: ltr;
+    max-width: 25%;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 28px;
+
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 7px;
+}
+.containerFluid .mainRow .shopRow .container .cards .card .cardContainer{
+
+    
+}
+
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie{
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-color);
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: ease-in 300ms all;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie:hover{
+    background-color: #FFD08F;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie.active{
+    background: var(--primary-color);
+    border: none;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie.active span{
+    color: var(--white-text);
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie .categorieIcon{
+    padding: 10px;
+    border-radius: 8px;
+}
+.containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie.active .categorieIcon{
+    background: var(--bg-color)!important;
+}
+
+@media (max-width : 1480px){
+    .shopCard .details .detailsInfo .detailTitle{
+        font-size: 16px;
+    }
+    .shopCard .details .shopBtn button label{
+        font-size: 12px;
+    }
+    .shopCard .details .shopBtn button span{
+        font-size: 15px;
+    }
+}
+@media (max-width : 1360px){
+    .containerFluid .mainRow .shopRow .container .cards .card{
+        padding-left: 2px;
+        padding-right: 10px;
+    }
+    .containerFluid .mainRow .shopRow .container .categories .categorieRow{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (max-width: 1300px){
+    .shopCard .details .detailsInfo .detailTitle {
+        font-size: 14px;
+        text-align: initial;
+    }
+    .shopCard .details .detailsInfo .detailWeight{
+        font-size: 14px;
+    }
+    .shopCard .details .detailsInfo .detailWeight small{
+        font-size: 12px;
+    }
+    .shopCard .details .detailsInfo .detailDelivery .Price{
+        font-size: 14px;
+    }
+    .shopCard .details .detailsInfo .detailDelivery .Price small{
+        font-size: 10px;
+    }
+    .shopCard .details .shopBtn button label{
+        font-size: 10px;
+    }
+    .shopCard .details .shopBtn button span{
+        font-size: 14px;
+    }
+    .shopCard .details .shopBtn button span small{
+        font-size: 10px;
+    }
+    .containerFluid .mainRow{
+        margin-top: 40px;
+    }
+    .modal{
+        width: 90%;
+    }
+}
+
+@media (max-width:800px){
+    .containerFluid .mainRow .shopRow .container .cards .card{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width:475px){
+    .containerFluid .mainRow{
+        padding-left: 2rem!important;
+        padding-right: 2rem!important;
+    }
+    .containerFluid .mainRow .shopRow .container .cards .card{
+        margin-bottom: 12px;
+    }
+    .searchBar .searchBarContainer .inputField input{
+        width: 120px;
+    }
+}
+
+
+.picture-container {
+    position: relative;
+  }
+  
+  .picture-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .picture-slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .active-dot {
+    background-color: #868889;
+  }
+  @media(max-width: 1090px){
+    .footer{
+        padding: 30px 45px;
+    }
+    .modal{
+        padding: 30px!important;
+    }
+    .modal .modalDetails .modalText .title{
+        font-size: 20px;
+    }
+    .price {
+        font-size: 19px;
+    }
+    .modal .modalDetails .modalText .weight span{
+        font-size: 16px;
+    }
+    .modal .modalDetails .modalText .weight label{
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .priceSettings span{
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .priceSettings label{
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .priceSettings .settings .settingsBtn svg{
+        font-size: 12px;
+    }
+    .modal .modalDetails .modalText .priceSettings .settings .settingsBtn{
+        border-radius: 6px;
+    }
+    .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn label {
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .pricing .priceDetail .priceDetailbtn span{
+        font-size: 14px;
+    }
+    .modal .modalDetails .modalText .pricing .totalPrice label{
+        font-size: 18px;
+    }
+    .modal .modalDetails .modalText .pricing .totalPrice span{
+        font-size: 18px;
+    }
+}
+@media (max-width: 560px){
+    .modal .modalDetails .modalPicture{
+        max-width: 100%;
+        flex: none;
+        flex-grow: unset;
+    }
+    .containerFluid .mainRow{
+        padding-left: 2rem!important;
+        padding-right: 2rem!important;
+    }
+}
+@media (max-width: 990px){
+    .containerFluid .mainRow .shopRow {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .modal .modalDetails .modalPicture .pictures{
+        height: 240px;
+    }
+    .modal .modalDetails .modalPicture{
+        max-width: 100%;
+    }
+    .modal{
+        padding: 20px!important;
+        height: fit-content;
+    }
+    .modal .modalDetails{
+        gap: 16px;
+    }
+    .modal .modalDetails .modalPicture{
+        flex: none;
+    }
 }

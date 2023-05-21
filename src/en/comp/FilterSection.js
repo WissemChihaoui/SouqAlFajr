@@ -12,7 +12,24 @@ const FilterSection = ({ setFilterSectionOpen }) => {
   const [showProduct, setShowProduct] = useState(true)
   const [showMarket, setShowMarket] = useState(true)
 const [selectedOnDemand, setSelectedOnDemand] = useState(false)
-  const productType = ["Tomato", "Carrot", "Cucamber","Potato","item 1", "item 2", "item 3", "item 4"];
+const productType = [
+  "Tomato",
+  "Carrot",
+  "Cucumber",
+  "Potato",
+  "Broccoli",
+  "Spinach",
+  "Eggplant",
+  "Bell Pepper",
+  "Zucchini",
+  "Onion",
+  "Radish",
+  "Lettuce",
+  "Cabbage",
+  "Celery",
+  "Mushroom"
+];
+
   const marketOptions=["Riyadh", "Jeddah", "Al Khobar", "Al Dammam","Mahdia","Monastir","Sousse","Sfax","Tunis"];
   const [selectedAvailability, setSelectedAvailability] = useState(false)
   const [selectAllAvaialability, setSelectAllAvaialability] = useState(false)
@@ -39,6 +56,13 @@ const [selectedOnDemand, setSelectedOnDemand] = useState(false)
         setSelectMarketAll(false);
     }
   }, [selectedProducts, productType]);
+
+  const handleSliderAfterChange = (values) => {
+    if (values[0] >= values[1]) {
+      setRangeMin(values[1]-1);
+      setRangeMax(values[1])
+    }
+  };
 
   const handleBadgeSelect = (badgeType) => {
     setSelectedAvailability(badgeType);
@@ -73,8 +97,11 @@ const [selectedOnDemand, setSelectedOnDemand] = useState(false)
   };
 
   const handleRangeChange = (values) => {
-    setRangeMin(values[0]);
-    setRangeMax(values[1]);
+    if(values[0]!==values[1]){
+      setRangeMin(values[0]);
+      setRangeMax(values[1]);
+    }
+   
   };
   const handleSelectMarketAll = () =>{
     if (selectMarketAll) {
@@ -115,13 +142,16 @@ const [selectedOnDemand, setSelectedOnDemand] = useState(false)
               range
               min={0}
               max={50}
+              draggableTrack={false}
               defaultValue={[rangeMin, rangeMax]}
               onChange={handleRangeChange}
+              onAfterChange={handleSliderAfterChange}
               trackStyle={[{ backgroundColor: "orange" }]}
               handleStyle={[
                 { borderColor: "orange" },
                 { borderColor: "orange" },
               ]}
+              allowCross={false}
             />
             <div className="rangeValues">
               <span className="minValue">{rangeMin} R.S</span>
@@ -144,7 +174,7 @@ const [selectedOnDemand, setSelectedOnDemand] = useState(false)
               </button>
             </div>
           </div>
-          <div className={`filterInputs ${showProduct ? 'hidden-over' : 'scroll'}`} style={{"height" :"75px"}}>
+          <div className={`filterInputs ${showProduct ? 'hidden-over' : 'scroll'}`} >
             <div className="optionBadgeContainer">
               {productType.map((product, index) => (
                 <div
@@ -173,7 +203,7 @@ const [selectedOnDemand, setSelectedOnDemand] = useState(false)
               </button>
             </div>
           </div>
-          <div className={`filterInputs ${showMarket ? 'hidden-over' : 'scroll'}`} style={{"height" :"75px"}}>
+          <div className={`filterInputs ${showMarket ? 'hidden-over' : 'scroll'}`} >
             <div className="optionBadgeContainer">
             {marketOptions.map((option, index) => (
             <div

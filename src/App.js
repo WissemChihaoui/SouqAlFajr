@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import Register from './en/pages/Register'
 import './assets/css/style.css'
+// import './assets/css/bootstrapBase.css'
 import PasswordReset from './en/pages/PasswordReset';
 import Home from './en/pages/Home';
 import PhoneVerifaction from './en/pages/PhoneVerifaction';

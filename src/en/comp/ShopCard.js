@@ -20,20 +20,20 @@ const ShopCard = ({openModal}) => {
                     Red Onion High Quality
                 </div>
                 <div className='detailWeight'>
-                    10<sup>Kg</sup>
+                    10<small>Kg</small>
                 </div>
                 <div className='detailDelivery'>
                     <span>Al Dammam</span>
                     <div className='Price importantText'>
                         2.99 SAR 
-                        <sup>/Kg</sup>
+                        <small>/Kg</small>
                     </div>
                 </div>
             </div>
             <div className='shopBtn'>
                 <button onClick={handleClick}>
                     <label>Auction Price</label>
-                    <span>2.99 SAR<sup>/Kg</sup></span>
+                    <span>2.99 SAR<small>/Kg</small></span>
                 </button>
             </div>
         </div>
