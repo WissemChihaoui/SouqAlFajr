@@ -2119,6 +2119,7 @@
     max-width: 100%;
     padding-bottom: 0.25rem !important;
     display: flex;
+    padding-left: 8px;
 }
 .containerFluid .mainRow .shopRow .container .categories .categorieRow{
     flex: 0 0 25%;
@@ -2172,7 +2173,7 @@
     position: relative;
     width: 100%;
     padding-right: 15px;
-    padding-left: 7px;
+    padding-left: 15px;
 }
 .containerFluid .mainRow .shopRow .container .cards .card .cardContainer{
 
@@ -2225,7 +2226,7 @@
 }
 @media (max-width : 1360px){
     .containerFluid .mainRow .shopRow .container .cards .card{
-        padding-left: 2px;
+        padding-left: 10px;
         padding-right: 10px;
     }
     .containerFluid .mainRow .shopRow .container .categories .categorieRow{
