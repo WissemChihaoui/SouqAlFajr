@@ -6,7 +6,7 @@ const ShopCard = ({ openModal }) => {
     openModal(true);
   };
   return (
-    <div className="shopCard">
+    <div className="shopCard" onClick={()=>handleClick()}>
       <div className="imageContent">
         <img src={onion} />
         <div className="productBadge availableProduct">Available</div>
@@ -26,7 +26,7 @@ const ShopCard = ({ openModal }) => {
           </div>
         </div>
         <div className="shopBtn">
-          <button onClick={handleClick}>
+          <button >
             <label>Auction Price</label>
             <span>
               2.99 SAR<small>/Kg</small>

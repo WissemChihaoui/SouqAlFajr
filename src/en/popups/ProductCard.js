@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import onion from "../../assets/img/onion.jpg";
 import onion2 from "../../assets/img/onion2.jpg";
@@ -18,6 +18,20 @@ const ProductCard = ({ setIsOpen }) => {
       setQte(sum);
     }
   };
+
+  useEffect(() => {
+    const imageScroll = setInterval(() => {
+      if(activeIndex === images.length-1){
+        setActiveIndex(0)
+      }else{
+        setActiveIndex(activeIndex+1)
+      }
+    },4000);
+
+    return () => {
+      clearInterval(imageScroll); // Clean up the interval on component unmount
+    };
+  }, [activeIndex]);
   return (
     <>
       <div className="darkBG" onClick={() => setIsOpen(false)} />

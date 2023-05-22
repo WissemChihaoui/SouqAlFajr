@@ -173,7 +173,7 @@ const FilterSection = ({ setFilterSectionOpen }) => {
           <div className="filterTitle">
             <h3>Product Type</h3>
             <div className="optionSettings">
-              <a href="#" onClick={handleSelectAll}>
+              <a href="#" onClick={handleSelectAll} className={selectAll ? "importantText" : ""}>
                 {selectAll ? "Deselect All" : "Select All"}
               </a>
               <Icon icon="carbon:dot-mark" />
@@ -215,9 +215,9 @@ const FilterSection = ({ setFilterSectionOpen }) => {
           <div className="filterTitle">
             <h3>Origin Market</h3>
             <div className="optionSettings">
-              <a href="#" onClick={handleSelectMarketAll}>
+              <a href="#" onClick={handleSelectMarketAll} className={selectMarketAll ? "importantText" : ""}>
                 {" "}
-                {selectMarketAll ? "Deselect All" : "Select All"}
+                {selectMarketAll ? "Deselect All" : "Select All" }
               </a>
               <Icon icon="carbon:dot-mark" />
               <button
@@ -258,7 +258,7 @@ const FilterSection = ({ setFilterSectionOpen }) => {
           <div className="filterTitle">
             <h3>Availability</h3>
             <div className="optionSettings">
-              <a href="#" onClick={selectAllAvailability}>
+              <a href="#" onClick={selectAllAvailability} className={selectAllAvaialability ? "importantText" : ""}>
                 {" "}
                 {selectAllAvaialability ? "Diselect All" : "Select All"}
               </a>

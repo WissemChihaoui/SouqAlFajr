@@ -28,6 +28,7 @@ const Login = ({ setLoginPopup, signupDemand }) => {
             <div className="phoneNumWrapper input">
               <div className="selectWrapper">
                 <ReactFlagsSelect
+                searchable
                   onSelect={(code) => setSelected(code)}
                   selected={selected}
                   customLabels={countryPhoneCodes}
@@ -75,6 +76,7 @@ const Login = ({ setLoginPopup, signupDemand }) => {
             <div className="phoneNumWrapper input">
               <div className="selectWrapper">
                 <ReactFlagsSelect
+                searchable 
                   onSelect={(code) => setSelected(code)}
                   selected={selected}
                   customLabels={countryPhoneCodes}

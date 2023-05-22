@@ -58,7 +58,7 @@ const Navbar = () => {
       </div>
       <div className={menuActive ? "navbarMenu active" : "navbarMenu"}>
         <div className="navbarHeader">
-          <h3 className="importantText">Souq Al Fajr</h3>
+          <a className="importantText" href="/">Souq Al Fajr</a>
           <div className="navbarMenuExit" onClick={() => setmenuActive(false)}>
             <Icon icon="material-symbols:close-rounded" />
           </div>
@@ -66,25 +66,25 @@ const Navbar = () => {
         <hr />
         <div className="navbarItems">
           <div className="navbarItem">
-            <a href="#">About us</a>
+            <a href="/about-us">About us</a>
           </div>
           <hr />
           <div className="navbarItem">
-            <a href="#">
+            <a href="/cart">
               <Icon icon="ic:outline-shopping-cart" />
               <span>Cart</span>
             </a>
           </div>
           <hr />
           <div className="navbarItem">
-            <a href="#">
+            <a href="#" onClick={() => handleLoginPopup(true)}>
               <Icon icon="mdi:user-add-outline" />
               <span>Sign up</span>
             </a>
           </div>
           <hr />
           <button className="navbarItem button">
-            <a href="#">
+            <a href="#" onClick={() => handleLoginPopup(false)}>
               <Icon icon="mdi:sign-in" />
               <span>Sign in</span>
             </a>

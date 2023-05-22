@@ -405,12 +405,19 @@
     }
 
     .footer .footerContainer .about {
-        text-align: center;
-        width: 90%;
+        
+        width: 100%;
     }
 
     .footer .footerContainer .footerLinks {
-        align-items: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .footer .footerContainer .footerLinks .socialMedia{
+        justify-content: flex-start;
+    }
+    .containerFluid .mainRow{
+        margin-top: 0px!important;
     }
 }
 
@@ -585,7 +592,8 @@
 }
 
 .filterBar .filterOptionContainer .filterTitle .optionSettings a {
-    color: var(--primary-color);
+    text-decoration: none;
+    color: #000;
 }
 
 .filterBar .filterOptionContainer .filterTitle .optionSettings svg {
@@ -729,7 +737,7 @@
     gap: 6px;
     border-radius: 8px;
     align-items: center;
-
+    cursor: pointer;
 }
 
 .shopCard .imageContent {
@@ -878,6 +886,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .contactSupport .content {
@@ -923,6 +932,10 @@
 
 .aboutHome .aboutHomeContainer .aboutInfo .textContent {
     margin-top: 60px;
+}
+.aboutHome .aboutHomeContainer .aboutInfo .textContent p{
+    text-align: left;
+    line-height: 28px;
 }
 
 .darkBG {
@@ -1242,7 +1255,7 @@
     }
 
     .filterBar .filterOptionContainer .filterTitle .optionSettings a {
-        color: var(--primary-color);
+        text-decoration: none;
     }
 
     .filterBar .filterOptionContainer .filterTitle .optionSettings svg {
@@ -1355,6 +1368,7 @@
         background: none;
         display: flex;
         align-items: center;
+        gap: 4px;
     }
 
     .searchBar .filterDisplayBtn {
@@ -1365,26 +1379,31 @@
 
     .searchBar .searchBarContainer .inputField {
         border: 1px solid var(--secondary-text);
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie {
         flex-direction: column;
+        padding: 3px 5px!important;
+        border: none!important;
     }
 
     .searchBar .searchBarContainer .inputField input {
-        width: 400px;
+        width: 100%;
     }
 
     .shopCard {
         cursor: pointer;
+        padding: 0;
+        border: none;
     }
 
     .contactSupport {
         width: 80px;
         height: 80px;
-        bottom: 8px;
+        bottom: 40px;
     }
 
     .aboutHome {
@@ -1397,6 +1416,7 @@
 
     .aboutHome .aboutHomeContainer .aboutInfo {
         position: unset;
+        padding-left: 48px;
     }
 
     .aboutHome .aboutHomeContainer .aboutInfo img {
@@ -1433,9 +1453,7 @@
         width: 80%;
     }
 
-    .searchBar .searchBarContainer .inputField input {
-        width: 260px;
-    }
+    
 
     .modal .modalDetails .modalText .title {
         font-size: 14px;
@@ -1506,7 +1524,10 @@
     }
 
     .shopCard .details .shopBtn button span {
-        font-size: 12px;
+        font-size: 12px!important;
+    }
+    .shopCard .details .shopBtn button label{
+        font-size: 8px!important;
     }
 
     .error {
@@ -1572,7 +1593,7 @@
 .modalLogin form .inputs .phoneNumWrapper.input {
     border: 1px solid var(--secondary-text);
     border-radius: 12px;
-    padding: 6px;
+    padding: 8px 16px;
 }
 
 .modalLogin form .inputs .phoneNumWrapper {
@@ -1586,6 +1607,7 @@
     font-weight: 500;
     outline: none;
     border: none;
+    height: 35px;
 }
 
 .modalLogin form .inputs .phoneNumWrapper .selectWrapper {
@@ -1908,7 +1930,7 @@
     border-radius: 6px;
     font-size: 16px;
     color: var(--white-text);
-    width: 30%;
+    width: 20%;
 
     display: flex;
 }
@@ -1962,6 +1984,14 @@
     display: flex;
     justify-content: center;
 }
+.emptySearch .container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: column;
+    align-items: center;
+}
 
 .emptySearch .background {
     position: absolute;
@@ -1985,6 +2015,16 @@
 @media (max-width: 768px) {
     .emptySearch .background {
         width: 100%;
+    }
+    .emptySearch .container img{
+        width: 190px;
+    }
+
+    .emptySearch .container div h2{
+        font-size: 18px;
+    }
+    .emptySearch .container div button{
+        padding: 18px 42px;
     }
 }
 
@@ -2559,10 +2599,10 @@
     align-items: center;
     gap: 16px;
     background: var(--bg-color);
-    border: 1px solid #E0E0E0;
     border-radius: 8px;
     cursor: pointer;
     transition: ease-in 300ms all;
+    border: 1px solid #e0e0e0;
 }
 
 .containerFluid .mainRow .shopRow .container .categories .categorieRow .categorie:hover {
@@ -2678,9 +2718,6 @@
         margin-bottom: 12px;
     }
 
-    .searchBar .searchBarContainer .inputField input {
-        width: 120px;
-    }
 }
 
 
