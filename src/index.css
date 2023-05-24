@@ -94,3 +94,25 @@ button{
   background-color: #D9D9D9;
   border-radius: 24px;
 }
+.carousel .slider-wrapper{
+  border-radius: 25px;
+}
+@media(max-width: 990px){
+  video{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.css-bf1e45-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-bf1e45-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-bf1e45-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+  text-align: left;
+}
+.css-mrvqko-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+  display: none;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+  text-align: left;
+}
+.css-mrvqko-MuiFormLabel-root-MuiInputLabel-root{
+  display: none!important;
+}

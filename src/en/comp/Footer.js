@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Icon } from "@iconify/react";
 import googlePlay from "../../assets/img/googlePlay.png";
 import appStore from "../../assets/img/appStore.png";
+import Login from "../popups/Login";
+
+
 const Footer = () => {
+  const [loginPopup, setLoginPopup] = useState(false);
   return (
     <div className="footer">
       <div className="footerContainer">
@@ -37,8 +41,8 @@ const Footer = () => {
           </div>
           <div className="links">
             <a href="#">AR</a>
-            <a href="#">Sign up</a>
-            <a href="#">About us</a>
+            <a  onClick={()=>setLoginPopup(true)}>Sign up</a>
+            <a href="/about-us">About us</a>
           </div>
           <div className="rights">
             <p>All right reserved for شركة حراج الفجر التجارية</p>
@@ -46,6 +50,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {loginPopup && (
+        <Login setLoginPopup={setLoginPopup} signupDemand={true} />
+      )}
     </div>
   );
 };

@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import Navbar from "../comp/Navbar";
 import Footer from "../comp/Footer";
 import { Icon } from "@iconify/react";
+
+import BasicSelect from "../comp/SelectCustom.js";
+
+const cityOptions = [
+  {key: 1, label: "opt1"},
+  {key: 2, label: "opt2"},
+]
 const Register = () => {
   const [pswHide, setPswHide] = useState(true);
   const [rpswHide, setRpswHide] = useState(true);
+  const [citySelect, setCitySelect] = useState(false)
+  const [codeSelect, setCodeSelect] = useState(false)
   return (
     <div>
       <Navbar />
@@ -28,8 +37,7 @@ const Register = () => {
               </div>
               <div className="inputField">
                 <Icon icon="material-symbols:location-on-outline" />
-                <input type={"text"} placeholder="Select delivery city" />
-                <Icon icon="material-symbols:keyboard-arrow-down-rounded" />
+                <BasicSelect label="Select delivery city" options={cityOptions} icon="material-symbols:location-on-outline" />
               </div>
               <div className="inputField">
                 <Icon icon="mdi:password-outline" />
@@ -54,9 +62,8 @@ const Register = () => {
                 />
               </div>
               <div className="inputField">
-                <Icon icon="fluent-mdl2:number-field" />
-                <input type={"text"} placeholder="Referral code" />
-                <Icon icon="material-symbols:keyboard-arrow-down-rounded" />
+                <Icon icon="material-symbols:location-on-outline" />
+                <BasicSelect label="Referral code" options={cityOptions} icon="material-symbols:location-on-outline" />
               </div>
             </div>
             <div className="submit">

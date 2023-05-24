@@ -1,0 +1,18 @@
+.carousel-root{
+    height: 100%;
+}
+.carousel.carousel-slider{
+    height: 100%;
+}
+.carousel .slider-wrapper{
+    height: 90%;
+}
+.carousel.carousel-slider .control-arrow{
+    height: 90%;
+}
+.carousel .slider-wrapper.axis-horizontal .slider{
+    height: 100%;
+}
+.carousel .control-dots .dot{
+    background: #868889;
+}

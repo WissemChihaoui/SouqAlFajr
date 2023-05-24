@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import onion from "../../assets/img/onion.jpg";
 import onion2 from "../../assets/img/onion2.jpg";
 import onion3 from "../../assets/img/onion3.jpg";
+import CarouselImages from "../comp/Carousel";
 const ProductCard = ({ setIsOpen }) => {
   const [qte, setQte] = useState(0);
   const [available, setAvailable] = useState(true);
@@ -41,32 +42,7 @@ const ProductCard = ({ setIsOpen }) => {
           onClick={() => setIsOpen(false)}
         />
         <div className="modalDetails">
-          <div className="modalPicture">
-            <div className="pictures">
-              <div className="picture-slider">
-                {images.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`Image ${index + 1}`}
-                    style={{
-                      display: index === activeIndex ? "block" : "none",
-                    }}
-                  />
-                ))}
-              </div>
-              <div className="productBadge availableProduct">Available</div>
-            </div>
-            <div className="pagination-dots">
-              {images.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === activeIndex ? "active-dot" : ""}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-          </div>
+          <CarouselImages />
           <div className="modalText">
             <div
               className="a"
