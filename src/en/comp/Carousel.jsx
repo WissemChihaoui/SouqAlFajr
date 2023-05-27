@@ -6,10 +6,10 @@ import onion3 from "../../assets/img/onion3.jpg";
 import video1 from "../../assets/video/video.mp4"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import './carousel.css'
-const CarouselImages = () => {
+const CarouselImages = (props) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
+  const available = props.available;
   const handlePlay = () => {
     setIsPlaying(true);
   };
@@ -32,7 +32,7 @@ const CarouselImages = () => {
                 src={image}
                 alt={`Image`}
             />
-            <div className="productBadge availableProduct">Available</div>
+            <div className={`productBadge ${available ? 'availableProduct': 'soldOutProduct'}`}>{available ? "available" : "sold out"}</div>
             </>
             ))}
           {videos.map((video) => (

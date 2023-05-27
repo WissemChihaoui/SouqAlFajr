@@ -98,8 +98,13 @@
 .navbar .navbarContainer .navbarLogo {
     font-weight: 700;
     font-size: 24px;
+    display: flex;
+    align-items: center;
 }
 
+.navbar .navbarContainer .navbarLogo img{
+    width: 120px;
+}
 .navbar .navbarContainer .navbarItems .navbarItem a {
     color: var(--secondary-text);
     font-weight: 400;
@@ -574,7 +579,7 @@
     flex-direction: column;
     gap: 8px;
 
-    max-height: 100px;
+    max-height: 120px;
 }
 
 .filterBar .filterOptionContainer .filterTitle {
@@ -754,7 +759,7 @@
 
 .productBadge {
     position: absolute;
-    bottom: 8px;
+    bottom: 14px;
     left: 9px;
     font-size: 16px;
     color: var(--white-text);
@@ -940,7 +945,7 @@
 
 .darkBG {
     background-color: rgba(0, 0, 0, 0.2);
-    width: 100vw;
+    width: 100%;
     height: 100%;
     z-index: 0;
     top: 50%;
@@ -967,6 +972,7 @@
     width: 78.584722%;
     height: 80%;
     z-index: 1001;
+    justify-content: center;
 }
 
 .modal svg {
@@ -1442,18 +1448,32 @@
         font-size: 11px;
         font-weight: 500;
     }
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: flex-start;
+        margin: 0 30px!important;
+    }
 }
 
 @media (max-width: 560px) {
     .modal .modalDetails .modalPicture .pictures img {
         height: 100%;
     }
+    .cart .shippingContainer .invoiceDetails .paymentBtn button{
+        padding: 16px 42px!important;
+    }
 
     .modalLogin {
         width: 80%;
     }
 
-    
+    .App .modal{
+        padding: 16px!important;
+        gap: 16px;
+        align-items: flex-end;
+    }
 
     .modal .modalDetails .modalText .title {
         font-size: 14px;
@@ -1501,6 +1521,7 @@
     .modal .modalDetails .modalText .pricing {
         gap: 10px;
         padding-top: 0;
+        margin-top: 16px;
     }
 
     .home .homeContainer .homeShow .homeContent {

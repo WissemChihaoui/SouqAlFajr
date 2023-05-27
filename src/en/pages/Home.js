@@ -9,8 +9,10 @@ import fish from "../../assets/img/fish.png";
 import vegetable from "../../assets/img/vegetable.png";
 import dates from "../../assets/img/dates.png";
 import ShopCard from "../comp/ShopCard";
+import ShopCardSO from "../comp/ShopCardSO";
 
 import ProductCard from "../popups/ProductCard";
+import ProductCardSO from "../popups/ProductCardSO";
 import Steps from "../comp/Steps";
 import ContactUsIcon from "../comp/ContactUsIcon";
 import EmptySearch from "../comp/EmptySearch";
@@ -21,9 +23,13 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [filterSectionOpen, setFilterSectionOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenSo, setIsOpenSo] = useState(false);
 
   const openModal = (newState) => {
     setIsOpen(newState);
+  };
+  const openModalSo = (newState) => {
+    setIsOpenSo(newState);
   };
 
   const handleCategorySelect = (category) => {
@@ -128,7 +134,7 @@ const Home = () => {
                 </div>
                 <div className="card">
                   <div className="cardContainer">
-                    <ShopCard openModal={openModal} />
+                    <ShopCardSO openModal={openModalSo} />
                   </div>
                 </div>
                 <div className="card">
@@ -138,7 +144,7 @@ const Home = () => {
                 </div>
                 <div className="card">
                   <div className="cardContainer">
-                    <ShopCard openModal={openModal} />
+                    <ShopCardSO openModal={openModalSo} />
                   </div>
                 </div>
                 <div className="card">
@@ -254,6 +260,7 @@ const Home = () => {
 
       <ContactUsIcon />
       {isOpen && <ProductCard setIsOpen={setIsOpen} />}
+      {isOpenSo && <ProductCardSO setIsOpenSo={setIsOpenSo} />}
     </div>
   );
 };

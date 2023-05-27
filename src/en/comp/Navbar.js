@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import Login from "../popups/Login";
+import Logo from '../../assets/img/logo.png'
 
 const Navbar = () => {
   const [menuActive, setmenuActive] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbarContainer">
         <a className="navbarLogo importantText" href="/">
-          Souq Al Fajr
+          <img src={Logo} width={100}/>
         </a>
         <div className="navbarItems">
           <div className="navbarItem">

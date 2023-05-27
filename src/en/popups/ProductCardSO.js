@@ -4,9 +4,9 @@ import onion from "../../assets/img/onion.jpg";
 import onion2 from "../../assets/img/onion2.jpg";
 import onion3 from "../../assets/img/onion3.jpg";
 import CarouselImages from "../comp/Carousel";
-const ProductCard = ({ setIsOpen }) => {
+const ProductCard = ({ setIsOpenSo }) => {
   const [qte, setQte] = useState(0);
-  const [available, setAvailable] = useState(true);
+  const [available, setAvailable] = useState(false);
   const [openPrice, setOpenPrice] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const images = [onion, onion2, onion3];
@@ -35,14 +35,14 @@ const ProductCard = ({ setIsOpen }) => {
   }, [activeIndex]);
   return (
     <>
-      <div className="darkBG" onClick={() => setIsOpen(false)} />
+      <div className="darkBG" onClick={() => setIsOpenSo(false)} />
       <div className="modal centered">
         <Icon
           icon="material-symbols:close-rounded"
-          onClick={() => setIsOpen(false)}
+          onClick={() => setIsOpenSo(false)}
         />
         <div className="modalDetails">
-          <CarouselImages available={true}/>
+          <CarouselImages available={false}/>
           <div className="modalText">
             <div
               className="a"

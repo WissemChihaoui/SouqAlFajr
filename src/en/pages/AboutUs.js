@@ -65,10 +65,10 @@ const AboutUs = () => {
             </form>
           </div>
           <div className="adress">
-            <h3>Haraj Al Fajr Trading Company</h3>
-            <p>Abdul Abdullah bin Abbas Street</p>
-            <p>Riyadh</p>
-            <p>Kingdom of Saudi Arabia</p>
+            <h3>HARAJ AL-FAJR TRADING COMPANY</h3>
+            <p>Prince Sultan Ibn Abdulaziz Road, Ash Shiqa Dist</p>
+            <p>Buraidah 52564</p>
+            <p>Saudi Arabia</p>
             <p>info@harajalfajr.sa</p>
           </div>
         </div>
